@@ -1,0 +1,242 @@
+﻿@*
+@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Log in";
+}
+
+<h1>@ViewData["Title"]</h1>
+<div class="row">
+    <div class="col-md-4">
+        <section>
+            <form id="account" method="post">
+                <h4>Use a local account to log in.</h4>
+                <hr />
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Input.Email"></label>
+                    <input asp-for="Input.Email" class="form-control" />
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Input.Password"></label>
+                    <input asp-for="Input.Password" class="form-control" />
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label asp-for="Input.RememberMe">
+                            <input asp-for="Input.RememberMe" />
+                            @Html.DisplayNameFor(m => m.Input.RememberMe)
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Log in</button>
+                </div>
+                <div class="form-group">
+                    <p>
+                        <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
+                    </p>
+                    <p>
+                        <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a>
+                    </p>
+                    <p>
+                        <a id="resend-confirmation" asp-page="./ResendEmailConfirmation">Resend email confirmation</a>
+                    </p>
+                </div>
+            </form>
+        </section>
+    </div>
+    <div class="col-md-6 col-md-offset-2">
+        <section>
+            <h4>Use another service to log in.</h4>
+            <hr />
+            @{
+                if ((Model.ExternalLogins?.Count ?? 0) == 0)
+                {
+                    <div>
+                        <p>
+                            There are no external authentication services configured. See <a href="https://go.microsoft.com/fwlink/?LinkID=532715">this article</a>
+                            for details on setting up this ASP.NET application to support logging in via external services.
+                        </p>
+                    </div>
+                }
+                else
+                {
+                    <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
+                        <div>
+                            <p>
+                                @foreach (var provider in Model.ExternalLogins)
+                                {
+                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
+                                }
+                            </p>
+                        </div>
+                    </form>
+                }
+            }
+        </section>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}*@
+
+
+
+
+
+
+
+
+
+
+
+@page
+@model LoginModel
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Auth</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="~/css/site.css"/>
+    </head>
+
+    <body>
+        <div class="auth">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-md-6 group-image">
+                        <img src="~/img/Group 48095654.png" alt="" class="img-fluid img-auth"/>
+                    </div>
+                     
+                    @*<div class="col-md-6 login d-none">*@
+                    <div class="col-md-6 signup">
+                         
+                        <h1>Sign in</h1>
+                        <p class="welcome">Welcome back please enter your details</p>
+                        <form id="account" method="post">
+                            <div asp-validation-summary="All" class="text-danger"></div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label asp-for="Input.Email">Enter Your Email</label>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text" id="basic-addon1">
+                                            <i class="fa-regular fa-envelope"></i>
+                                        </span>
+                                        <input type="text" asp-for="Input.Email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1">
+                                        <span asp-validation-for="Input.Email" class="text-danger"></span>                                    
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <label asp-for="Input.Password">Enter Your Password</label>
+                                    <div class="input-group mb-3">
+                                        <input asp-for="Input.Password" type="password" class="form-control passInput" placeholder="Password" aria-label="Password" aria-describedby="basic-addon2">
+                                        <button type="button" class="input-group-text tooglePassword" id="basic-addon2">
+                                            <i class="fa-regular fa-eye"></i>
+                                        </button>
+                                        <span asp-validation-for="Input.Password" class="text-danger"></span>
+                                    </div>                                    
+                                </div>
+                            </div>
+                            <div class="input-group justify-content-right">
+                                <button type="button" class="btn text-primary showForget" id="forgot-password" asp-page="./ForgotPassword"
+                                >Forgot Password ?</button>
+                            </div>    
+                            <div class="input-group my-3">
+                                <a href="profile.html" class="btn btn-outline-primary btn-auth">Sign In</a>
+                            </div>
+                        </form>
+                        <h6>--- Or Sign In With ---</h6>
+                        <div class="social-icons">
+                            <a href="">
+                                <i class="fa-brands fa-facebook"></i>
+                            </a>
+                            <a href="">
+                                <i class="fa-brands fa-google"></i>
+                            </a>
+                        </div>
+                        <p class="no_account">
+                            Don’t have an account
+                            <button type="button" class="btn showRegister" asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Sign Up</button>
+                        </p>
+                    </div>
+                    <div class="col-md-6 forgetPassword d-none">
+                        <h1>Forgot Your Password</h1>
+                        <p class="welcome">Please confirm your email address below and we will
+                            send you a verification code.</p>
+                        <form>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label for="">Enter Your Email</label>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text" id="basic-addon1">
+                                            <i class="fa-regular fa-envelope"></i>
+                                        </span>
+                                        <input type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input-group my-3">
+                                <button type="button" class="btn btn-outline-primary btn-auth showVerify">Continue</button>
+                            </div>
+                        </form>
+                        <p class="no_account">
+                            Already have an Account
+                            <button type="button" class="btn showLogin">Sign In</button>
+                        </p>
+                    </div>
+                    <div class="col-md-6 verifyCode d-none">
+                        <h1>Verify Code</h1>
+                        <p class="welcome">Code is sent to nickname@Gmail.com</p>
+                        <form>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" placeholder="742913" max="6" aria-label="code" aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input-group my-3">
+                                <button type="submit" class="btn btn-outline-primary btn-auth">Verify</button>
+                            </div>
+                        </form>
+                        <p class="no_account">
+                            Already have an Account
+                            <button type="button" class="btn showLogin" asp-page="./Login" asp-route-returnUrl="@Model.ReturnUrl">Sign In</button>
+                        </p>
+                    </div>
+                    </div>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        @*<script src="https://cdn.jsdelivr.net/npm/popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+       *@ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+        <script src="~/js/site.js"></script>
+    </body>
+
+</html>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+
+
+
+
+ 
+
+
+
+
+
+

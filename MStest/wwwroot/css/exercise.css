@@ -1,0 +1,75 @@
+.title pre{
+    color: #73768B;
+    
+}
+.title h1{
+    padding-top: 90px;
+    padding-left: 90px;
+    font-weight: bolder;
+    font-family: 'Noto Kufi Arabic';
+    color: #032E47;
+}
+
+.paragraph1 img{
+    padding-top: 120px;
+    position: absolute;
+    margin-left: 58%;
+   
+}
+.paragraph1 h5{
+    padding-top: 90px;
+    padding-left: 90px;
+    font-weight: bolder;
+    font-family: 'Noto Kufi Arabic';
+    color: #032E47;
+    
+}
+.paragraph1 pre{
+    color: #454858;
+}
+.paragraph2 img{
+    padding-top: 120px;
+    position: absolute;
+    margin-left: 58%;
+    max-width: 100%;
+    height: auto;
+}
+.paragraph2 h5{
+    padding-top: 90px;
+    padding-left: 90px;
+    font-weight: bolder;
+    font-family: 'Noto Kufi Arabic';
+    color: #032E47;
+    
+}
+.paragraph2 pre{
+    color: #454858;
+}
+.paragraph3 img{
+    padding-top: 120px;
+    position: absolute;
+    margin-left: 58%;
+    max-width: 100%;
+    height: auto;
+}
+.paragraph3 h5{
+    padding-top: 90px;
+    padding-left: 90px;
+    font-weight: bolder;
+    font-family: 'Noto Kufi Arabic';
+    color: #032E47;
+    
+}
+.paragraph3 pre{
+    color: #454858;
+}
+
+.pictures{
+    float: right;
+}
+.pictures img{
+    margin-top: 0%;
+   margin-left: 30%;
+    display: inline-block;
+    vertical-align: middle;
+}
