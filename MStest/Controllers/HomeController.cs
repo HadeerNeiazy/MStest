@@ -23,7 +23,27 @@ namespace MStest.Controllers
             return View();
         }
 
+        public IActionResult About()
+        {
+            return View();
+        }
+
+        public IActionResult Form()
+        {
+            return View();
+        }
+
+        public IActionResult Chat()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        public IActionResult HomePage()
         {
             return View();
         }

@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/custom.css">
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@600&display=swap" rel="stylesheet">
+    <title>Main Page</title>
+</head>
+<body style="background-image: url(/img/profilebg.svg); background-size: cover;">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#" style="color: #3B72AA;">
+            <img src="~/img/logo.jpg" width="50" height="50" class="d-inline-block align-top" alt="">
+            MS SUPPORT
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a id="home" class="nav-link" href="~/home/homePage">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="~/home/about">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="~/Identity/Account/login" tabindex="-1" aria-disabled="true" style="padding-right: 340px;">Login</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <span><img src="~/img/Vector (1).png"> English</span>
+                <a href="~/Identity/Account/register" id="sign"  class="btn btn-outline-success my-2 my-sm-0">Sign Up</a>
+            </form>
+        </div>
+    </nav>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <div class="container">
+        <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top" style="top: 3600px;">
+            <div class="col-md-4">
+                <div id="first">
+                    <img class="bi me-2" src="~/img/logo2.jpg"><p>MS SUPPORT</p>
+                    <ul class="nav flex-column">
+                        <li><img id="facebook" src="~/img/Facebook.png" alt=""></li>
+                        <li><img id="chrome" src="~/img/Chrome.png" alt=""></li>
+                        <li><img id="twitter" src="~/img/Twitter.png" alt=""></li>
+                        <li><img id="insta" src="~/img/Instagram.png" alt=""></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4 ">
+                <div id="second">
+                    <h5>Company</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item "><a href="~/home/about" class="nav-link p-0">About Us</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link p-0">Contact Us</a></li>
+                        <li class="nav-item"><a href="~/Identity/Account/login" class="nav-link p-0 ">Sign in</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div id="third">
+                    <h5>Popular Categories</h5>
+                    <ul class="nav flex-column">
+                        <li><a href="~/doctor/diagnosis" class="nav-link p-0 ">Diagnosis</a></li>
+                        <li><a href="~/home/form" class="nav-link p-0 ">Medicine</a></li>
+                        <li><a href="~/food/index" class="nav-link p-0">Food</a></li>
+                        <li><a href="~/exercise/index" class="nav-link p-0">Exercises</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!--end of the footer-->
+    <script src="~/js/js.js"></script>
+    <script src="~/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/all.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

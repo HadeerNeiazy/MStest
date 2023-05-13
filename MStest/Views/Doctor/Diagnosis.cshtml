@@ -1,0 +1,143 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/custom.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Diagnosis</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#" style="color: #3B72AA;">
+            <img src="~/img/logo.jpg" width="50" height="50" class="d-inline-block align-top" alt="">
+            MS SUPPORT
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a id="home" class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="width: 220px;">Notifications</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" tabindex="-1" aria-disabled="true" style="padding-right: 340px;">Chats</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <span><img src="~/img/Vector (1).png"> English</span>
+                <img id="user" src="~/img/User.png" width="50px height=50px">
+            </form>
+        </div>
+    </nav>
+    <!--navbar-->
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <!--the end of navbar-->
+
+    <div class="container">
+        <div class="row">
+            <div class="dia3">
+                <span>01</span><article>Diagnosis</article>
+                <p>
+                    Multiple sclerosis is typically diagnosed based on the presenting signs and symptoms, in combination with supporting medical imaging<br>
+                    and laboratory testing,it's the only way to be 100% confident of being a multiple sclerosis patient or not.So in our application we will<br>
+                    depend on the symptoms side by side with the Magnetic resonance imaging (MRI) of the brain and spine that show areas of<br>
+                    demyelination (lesions or plaques),so that the accuracy of the results will depend on both of them. <br>
+                    <br>
+                    Symptoms of MS:<br>
+                    1-fatigue.<br>
+                    2-difficulty walking.<br>
+                    3-vision problems, such as blurred vision.<br>
+                    4-problems controlling the bladder.<br>
+                    5-numbness or tingling in different parts of the body.<br>
+                    6-muscle stiffness and spasms.<br>
+                    7-problems with balance and co-ordination.<br>
+                    8-problems with thinking, learning and planning.<br>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="shape6" style="top: 420px;"></div>
+    <div class="shape5"></div>
+    <div class="container">
+        <div class="info">
+            <div id="load">
+                <span id="select">
+                    <i style="font-size: 60px;margin-left: 70px;" class="fa-solid fa-file-arrow-up"></i><br>Select a file to upload<br>
+                    <p id="drag">Or drag and drop it here </p>
+                </span>
+                <p><img id="output" height="350px" /></p>
+                <div class="button2"><button type="button" onclick="myfunction">cancel</button></div>
+                <div class="change">
+                    <label><a href="#">upload</a></label>
+                    <input type="file" accept="image/*" onchange="loadFile(event)" onclick="hide()">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="shape2"></div>
+    <div class="container">
+        <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
+            <div class="col-md-4">
+                <div id="first">
+                    <img class="bi me-2" src="~/img/logo2.jpg"><p>MS SUPPORT</p>
+                    <ul class="nav flex-column">
+                        <li><img id="facebook" src="~/img/Facebook.png" alt=""></li>
+                        <li><img id="chrome" src="~/img/Chrome.png" alt=""></li>
+                        <li><img id="twitter" src="~/img/Twitter.png" alt=""></li>
+                        <li><img id="insta" src="~/img/Instagram.png" alt=""></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4 ">
+                <div id="second">
+                    <h5>Company</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item "><a href="#" class="nav-link p-0">About Us</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link p-0">Contact Us</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link p-0 ">Sign in</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div id="third">
+                    <h5>Popular Categories</h5>
+                    <ul class="nav flex-column">
+                        <li><a href="#" class="nav-link p-0 ">Diagnosis</a></li>
+                        <li><a href="#" class="nav-link p-0 ">Medicine</a></li>
+                        <li><a href="#" class="nav-link p-0">Food</a></li>
+                        <li><a href="#" class="nav-link p-0">Exercises</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="~/js/js.js"></script>
+    <script src="~/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/all.min.js"></script>
+</body>
+</html>
