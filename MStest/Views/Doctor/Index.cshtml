@@ -1,0 +1,222 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/style.css" />
+    <link rel="stylesheet" href="~/css/chat.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="~/css/custom.css">
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@600&display=swap" rel="stylesheet">
+    <title>Home Page for Doctors</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#" style="color: #3B72AA;">
+            <img src="~/img/logo.jpg" width="50" height="50" class="d-inline-block align-top" alt="">
+            MS SUPPORT
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a id="home" class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item" style="width: 220px;">
+                    <a class="nav-link" href="#">Notifications</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" tabindex="-1" aria-disabled="true" style="padding-right: 360px;">Login</a>
+                </li>
+                <form class="form-inline my-2 my-lg-0">
+                    <span><img src="~/img/Vector (1).png"> English</span>
+                    <img id="user" src="~/img/User.png" width="50px height=50px">
+                </form>
+        </div>
+    </nav>
+    <div class="container">
+        <main role="main" class="pb-3">
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <div class="headerSlider">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="~/img/Frame 3 (1).png" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="~/img/Frame 3 (2).png" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="~/img/Frame 4.png" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="~/img/Frame 3 (1).png" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="~/img/Frame 3 (2).png" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="~/img/Frame 4.png" />
+                        </div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+
+            <div class="slideshow-container">
+
+                <div class="mySlides fade">
+                    <img class="images" src="~/img/Frame 3 (1).png">
+                </div>
+
+                <div class="mySlides fade">
+                    <img class="images" src="~/img/Frame 3 (2).png">
+                </div>
+
+                <div class="mySlides fade">
+                    <img class="images" src="~/img/Frame 4.png">
+                </div>
+
+            </div>
+
+            <br>
+            <div style="text-align:center">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+
+            <!--the start of 3 section-->
+            <div class="shape" style="top: 316px;"></div>
+            <div class="container">
+                <div class="service">
+                    <p class="service1">Our Services</p>
+                    <p class="service2">
+                        “Health is a state of complete harmony of the body, mind and spirit. When one is free from physical disabilities<br>
+                        and mental distractions”
+                    </p>
+                </div><br><br>
+                <div class="row row-cols-1 row-cols-md-2 g-4">
+                    <div class="col">
+                        <div class="cards">
+                            <img src="~/img/Frame 23456.png">
+                            <div class="card-body">
+                                <span class="card-title">01 <span>Diagnosis</span></span>
+                                <p class="card-text">The process of identifying a disease, condition, or injury from its signs and symptoms.<br> A health history, physical exam, and tests,<br> such as blood tests, imaging tests, and<br> biopsies, may be used to help make a diagnosis. </p>
+                                <button type="button"><a href="diagnosis.html">Know more</a>  <i class="fa-solid fa-arrow-up-long"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="cards">
+                            <img src="~/img/User.png" style="width: 400px;padding-left: 110px; padding-top: 20px;">
+                            <div class="card-body">
+                                <span class="card-title">02 <span>Profile</span></span>
+                                <p class="card-text">Doctors have always played a very important in the development of our society.<br>Furthermore,many doctors have even risked their<br> lives to serve the patients,It is very important for us convey our gratitude towards them.</p>
+                                <button type="button"><a href="#">Explore </a> <i class="fa-solid fa-arrow-up-long"></i></button>
+                            </div>
+                        </div>
+                        <div class=""></div>
+                    </div>
+                    <div class="col">
+                        <div class="cards">
+                            <img src="~/img/Asset 20 2.png">
+                            <div class="card-body">
+                                <span class="card-title">03 <span>Notes</span></span>
+                                <p class="card-text">The process of identifying a disease, condition, or injury from its signs and symptoms.<br> A health history, physical exam,<br>and tests, such as blood tests, imaging tests, and biopsies,<br> may be used to help make a diagnosis.</p>
+                                <button type="button"><a href="#">Know more </a><i class="fa-solid fa-arrow-up-long"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="cards">
+                            <img src="~/img/young-handsome-physician-medical-robe-with-stethoscope 2.png">
+                            <div class="card-body">
+                                <span class="card-title">04 <span>Chats</span></span>
+                                <p class="card-text">Doctors have always played a very important in the development of our society.<br> Furthermore, many doctors have even risked their<br> lives to serve the patients , It is very<br> important for us convey our gratitude towards them.</p>
+                                <button type="button"><a href="#">Explore </a><i class="fa-solid fa-arrow-up-long"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="shape5"></div>
+            <!--the end of 3  section-->
+            <!--start of footer-->
+            <div class="container">
+                <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
+                    <div class="col-md-4">
+                        <div id="first">
+                            <img class="bi me-2" src="~/img/logo2.jpg"><p>MS SUPPORT</p>
+                            <ul class="nav flex-column">
+                                <li><img id="facebook" src="~/img/Facebook.png" alt=""></li>
+                                <li><img id="chrome" src="~/img/Chrome.png" alt=""></li>
+                                <li><img id="twitter" src="~/img/Twitter.png" alt=""></li>
+                                <li><img id="insta" src="~/img/Instagram.png" alt=""></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4 ">
+                        <div id="second">
+                            <h5>Company</h5>
+                            <ul class="nav flex-column">
+                                <li class="nav-item "><a href="#" class="nav-link p-0">About Us</a></li>
+                                <li class="nav-item"><a href="#" class="nav-link p-0">Contact Us</a></li>
+                                <li class="nav-item"><a href="#" class="nav-link p-0 ">Sign in</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div id="third">
+                            <h5>Popular Categories</h5>
+                            <ul class="nav flex-column">
+                                <li><a href="#" class="nav-link p-0 ">Diagnosis</a></li>
+                                <li><a href="#" class="nav-link p-0 ">Medicine</a></li>
+                                <li><a href="#" class="nav-link p-0">Food</a></li>
+                                <li><a href="#" class="nav-link p-0">Exercises</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+
+        </main>
+    </div>
+    <!--end of the footer-->
+    @*<script src="~/js/js.js"></script>*@
+    @*<script src="~/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/all.min.js"></script>*@
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    @*<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>*@
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="~/js/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+﻿@page
+@model MStest.Areas.Identity.Pages.Account.NotesModel
+@{
+}
+<div class="container">
+    <div class="notes">
+        <div class="section-title">
+            <h2>
+                <span class="h2">03</span> Notes
+            </h2>
+            <p>You can write and arrange your thoughts here</p>
+        </div>
+        <div class="cards">
+            <div class="row" id="cards">
+                <div class="col-md-4 mt-4">
+                    <div class="card border-0 shadow">
+                        <img src="~/img/notes.png" class="img-fluid" alt="">
+                        <h3 class="text-center">Untitle Note 1</h3>
+                        <button class="btn btn-load">Tab to load</button>
+                    </div>
+                </div>
+                <div class="col-md-4 mt-4">
+                    <div class="card border-0 shadow">
+                        <img src="~/img/notes.png" class="img-fluid" alt="">
+                        <h3 class="text-center">Untitle Note 2</h3>
+                        <button class="btn btn-load">Tab to load</button>
+                    </div>
+                </div>
+                <div class="col-md-4 mt-4">
+                    <div class="card border-0 shadow">
+                        <img src="~/img/notes.png" class="img-fluid" alt="">
+                        <h3 class="text-center">Untitle Note 3</h3>
+                        <button class="btn btn-load">Tab to load</button>
+                    </div>
+                </div>
+                <div class="col-md-4 mt-4">
+                    <div class="card border-0 shadow">
+                        <img src="~/img/notes.png" class="img-fluid" alt="">
+                        <h3 class="text-center">Untitle Note 4</h3>
+                        <button class="btn btn-load">Tab to load</button>
+                    </div>
+                </div>
+                <div class="col-md-4 mt-4">
+                    <div class="card border-0 shadow">
+                        <img src="~/img/notes.png" class="img-fluid" alt="">
+                        <h3 class="text-center">Untitle Note 5</h3>
+                        <button class="btn btn-load">Tab to load</button>
+                    </div>
+                </div>
+                <div class="col-md-4 mt-4 btn-append text-center" id="appendNotes" style="align-self: center;">
+                    <button class="btn" onclick="appendNotes(this)">
+                        <img src="~/img/plus.svg" class="img-fluid text-center m-auto d-block" alt="">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

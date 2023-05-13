@@ -1,0 +1,639 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #3B72AA;
+    border-radius: 10px;
+}
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #007efc;
+    }
+
+*, h2, h1, h3, h4, h5, h6 {
+    font-family: 'Nunito', sans-serif;
+}
+
+.img-auth {
+    max-height: 100vh;
+}
+
+.auth h1 {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 36px;
+    line-height: 54px;
+    text-transform: capitalize;
+    color: #242424;
+    text-align: center;
+}
+
+.auth .welcome {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    text-align: center;
+    text-transform: capitalize;
+    color: #333745;
+}
+
+.auth label {
+    color: #838AA3;
+}
+
+.auth input {
+    background: #FCFCFC;
+    padding: 2% 2%;
+}
+
+.auth .input-group {
+    margin-top: 2%;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.auth .btn-auth {
+    border: none;
+    background: linear-gradient(135deg, #72EDF2 0%, #5151E5 100%);
+    border-radius: 8px;
+    padding: 12px 24px;
+    color: white;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    width: 75%;
+    margin: auto;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+.auth h6 {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    color: #5b5e72;
+    position: relative;
+    text-align: center;
+}
+
+.no_account {
+    text-align: center;
+    color: #333745;
+}
+
+.social-icons {
+    margin: 5% 0;
+    text-align: center;
+}
+
+    .social-icons a {
+        color: transparent;
+        text-decoration: none;
+        background-color: #EDF4FF;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        padding: 2%;
+        margin-left: 2%;
+    }
+
+    .social-icons .fa-facebook {
+        color: #337FFF;
+    }
+
+    .social-icons .fa-google {
+        color: #E94235;
+    }
+
+@media (max-width:992px) {
+    .group-image {
+        display: none;
+    }
+
+    .signup {
+        margin: auto;
+        width: 100% !important;
+    }
+}
+
+.no_account button {
+    color: #3B72AA;
+    font-weight: 900;
+}
+
+.justify-content-right {
+    justify-content: right;
+}
+
+.registerContinue input[type=radio] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.registerContinue label {
+    width: 40%;
+}
+/* IMAGE STYLES */
+.registerContinue input[type=radio] + .customInput {
+    cursor: pointer;
+    background: rgba(59, 114, 170, 0.15);
+    padding: 5%;
+}
+
+/* CHECKED STYLES */
+.registerContinue input[type=radio]:checked + .customInput {
+    outline: 2px solid #f00;
+}
+
+.navbar ul.navbar-nav {
+    margin-right: 0 !important;
+}
+
+    .navbar ul.navbar-nav li a {
+        font-weight: 700;
+        font-size: 20px;
+    }
+
+    .navbar ul.navbar-nav .active {
+        color: #3B72AA
+    }
+
+.navbar .btn-login {
+    padding: .5% 4%;
+    margin-left: 3%;
+}
+
+
+
+.profile .section-title {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    color: #3B72AA;
+    letter-spacing: .5px;
+}
+
+.profile form div {
+    text-align: left;
+}
+
+    .profile form div label {
+        color: rgba(17, 65, 85, 1);
+        font-size: 20px;
+        font-weight: 900;
+    }
+
+.profile form p {
+    color: rgba(182, 182, 182, 1)
+}
+
+#uploadPhoto {
+    opacity: 0;
+    z-index: -1;
+}
+
+label {
+    cursor: pointer;
+    /* Style as you please, it will become the visible UI component. */
+}
+
+footer {
+    margin-top: 3%;
+    padding: 5% 0 3%;
+    background-color: #3B72AA !important;
+}
+
+ul {
+    list-style: none;
+}
+
+footer ul li {
+    margin-top: 3%;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer h3 {
+    font-family: 'Playfair Display SC', serif;
+    font-size: 25px;
+    font-weight: 800;
+    color: #fff;
+}
+
+footer .social i {
+    font-size: 25px;
+}
+
+#showImage {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.group-image {
+    min-height: 100vh;
+    background-size: cover;
+    background-position: left;
+}
+
+.btn-update {
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.25);
+    border: 1px solid #5151E5;
+    color: #007efc;
+    background-color: transparent;
+    transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+}
+
+    .btn-update:hover {
+        background: linear-gradient(135deg, #72EDF2 0%, #5151E5 100%);
+        color: #fff;
+    }
+
+.ml-auto {
+    margin-left: auto;
+}
+
+.control .dropdown-menu[data-bs-popper] {
+    left: -81px !important;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.notes .section-title h2 {
+    font-family: "Noto Kufi Arabic", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    color: #032e47;
+    line-height: 53px;
+}
+
+.notes .section-title span.h2 {
+    margin-right: 10px;
+    color: #f1f8ff;
+    font-weight: 700;
+    -webkit-text-stroke: 2px #29295b;
+}
+
+.notes .section-title p {
+    color: rgba(105, 108, 129, 1);
+    font-weight: 800;
+}
+
+.notes .section-title {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    background: linear-gradient(135deg, #72EDF2 0%, #5151E5 100%);
+    border-radius: 50px 50px 200px 50px;
+    padding: 1% 5%;
+}
+
+.notes .cards {
+    margin-top: 2%;
+}
+
+    .notes .cards .card {
+        border-radius: 45px 45px 25px 25px;
+        -webkit-border-radius: 45px 45px 25px 25px;
+        -moz-border-radius: 45px 45px 25px 25px;
+        -ms-border-radius: 45px 45px 25px 25px;
+        -o-border-radius: 45px 45px 25px 25px;
+    }
+
+        .notes .cards .card h3 {
+            text-align: center;
+            margin: 5% 0 8%;
+            color: rgba(0, 0, 0, 0.6);
+            font-weight: 700;
+        }
+
+        .notes .cards .card img {
+            height: 23rem;
+            text-align: center;
+            margin: auto;
+            display: block;
+        }
+
+.btn-load {
+    background: linear-gradient(135deg, #72EDF2 0%, #5151E5 100%);
+    width: 50%;
+    margin: auto;
+    color: #fff;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    padding: 2% 2%;
+    margin-bottom: 5%;
+}
+
+.areyou {
+    font-weight: 800;
+}
+
+.ml-4 {
+    margin-left: 3%;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #3B72AA;
+    border-radius: 10px;
+}
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #007efc;
+    }
+
+*, h2, h1, h3, h4, h5, h6 {
+    font-family: 'Nunito', sans-serif;
+}
+
+.form {
+    background: #F1F8FF;
+}
+
+footer {
+    margin-top: 3%;
+    padding: 5% 0 3%;
+}
+
+ul {
+    list-style: none;
+}
+
+footer ul li {
+    margin-top: 3%;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer h3 {
+    font-family: 'Playfair Display SC', serif;
+    font-size: 25px;
+    font-weight: 800;
+    color: #fff;
+}
+
+footer .social i {
+    font-size: 25px;
+}
+
+.section-form span.h2 {
+    margin-right: 10px;
+    color: #f1f8ff;
+    font-weight: 700;
+    -webkit-text-stroke: 2px #29295b;
+}
+
+.section-form h2 {
+    font-family: "Noto Kufi Arabic", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    color: #032e47;
+    line-height: 53px;
+}
+
+.section-form h3 {
+    color: #454858;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 36px;
+}
+
+.section-form form label {
+    color: #5B5E72;
+    font-weight: 500;
+}
+
+.section-form .btn-plus {
+    background-color: white;
+    border: rgb(192, 192, 192) 1px solid;
+    font-size: 23px;
+    font-weight: 500;
+    padding: 0;
+    padding: 1%;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.justify-content-right {
+    justify-content: right;
+}
+
+.bottom {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+.sectionForm {
+    padding: 3% 0;
+}
+
+.btn-login {
+    background: linear-gradient(135deg, #72EDF2 0%, #5151E5 100%), linear-gradient(0deg, #FFFFFF, #FFFFFF);
+    border: 1px solid rgba(255, 255, 255, 1);
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    color: #fff;
+    padding: .5% 3%;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.about {
+    background-image: url(../img/aboutbg.svg);
+    min-height: 80vh;
+    background-size: cover;
+    background-position: bottom;
+    padding-top: 5%;
+}
+
+    .about .section-title-about {
+        font-weight: 900;
+        color: rgba(17, 65, 85, 1);
+    }
+
+    .about .section-desc-about {
+        color: rgba(125, 121, 135, 1);
+        text-align: center;
+        font-weight: 800;
+        line-height: 2;
+        margin-top: 5%;
+        font-size: 20px;
+    }
+
+.section-about {
+    /*background-image: url(../img/aboutPage.svg);
+    background-size: cover;*/
+}
+
+    .section-about h2 {
+        color: #3B72AA;
+        font-weight: 900;
+    }
+
+    .section-about p {
+        color: #7D7987;
+        font-weight: 800;
+        line-height: 2.5;
+    }
+
+    .section-about .row:nth-child(even) {
+        direction: rtl;
+    }
+
+.bg-footer {
+    background: rgba(59, 114, 170, 1);
+}
+
+
+.swiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+}
+
+.swiper-slide img {
+        display: block;
+        width: 100%;
+}
+
+.homebage {
+    /*background-image: url(../img/aboutPage.svg);
+    background-size: cover;*/
+}
+
+    .homebage .homeTitle {
+        color: rgba(91, 94, 114, 1);
+        font-weight: 900;
+        margin: 5% 0;
+    }
+
+        .homebage .homeTitle span {
+            color: rgba(107, 172, 238, 1);
+        }
+
+    .homebage .services .section .sectionTitle {
+        font-weight: 800;
+        color: rgba(17, 65, 85, 1);
+    }
+
+    .homebage .services .section .sectiondesc {
+        color: rgba(139, 142, 165, 1);
+    }
+
+    .homebage .services .cards .card {
+        margin-bottom: 5%;
+    }
+
+    .homebage .services .cards h2 {
+        padding: 0 5%;
+        margin-top: 3%;
+        font-family: "Noto Kufi Arabic", sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 28px;
+        color: #032e47;
+        line-height: 53px;
+        text-align: left;
+    }
+
+    .homebage .services .cards .card span.h2 {
+        margin-right: 10px;
+        color: #f1f8ff;
+        font-weight: 700;
+        -webkit-text-stroke: 2px rgba(41, 41, 91, 1);
+    }
+
+    .homebage .services .cards .card p {
+        text-align: left;
+        margin-bottom: 6%;
+        color: rgba(69, 72, 88, 1);
+        padding: 0 5%;
+    }
+
+.btn-know {
+    margin-left: 3%;
+    background: linear-gradient(135deg, #72EDF2 0%, #5151E5 100%);
+    border-radius: 50px;
+    text-align: center;
+    width: 25%;
+    color: #fff;
+    margin-bottom: 3%;
+    padding: 2%;
+}
+
+.control .dropdown-menu[data-bs-popper] {
+    left: -81px !important;
+}
