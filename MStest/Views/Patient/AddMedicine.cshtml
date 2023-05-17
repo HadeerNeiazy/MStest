@@ -1,0 +1,82 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+
+    Layout = "_Layout";
+}
+<div style="display:none" id="infoDiv">
+
+</div>
+
+<section class="section-form">
+    <div class="container">
+        <div class="section-title">
+            <h2>
+                <span class="h2">02</span> Medicine
+            </h2>
+        </div>
+        <div class="sectionForm">
+            <h3>
+                Enter the name and times of medicine of talking your dose, and we will send you a notification to
+                remind you of it
+            </h3>
+            @using (Html.BeginForm("AddMedicine", "Patient", FormMethod.Post))
+            {
+                <div id="first_form">
+
+                    <div class="row" id="row">
+                        <div class="col-5">
+                            <label for="">Medicine Name</label>
+                            <input type="text" name="Name" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div id="sec_form" class="">
+
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <label for="">1st Time</label>
+                            <input type="time" name="Times[0]" class="form-control">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="">2nd Time</label>
+                            <input type="time" name="Times[1]" class=" form-control">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="">3rd Time</label>
+                            <input type="time" name="Times[2]" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group d-flex justify-content-right mt-3">
+                    <button type="submit" class="btn btn-outline-primary px-4">Send</button>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+<script>
+    function checkMedicineTime() {
+        
+        // call the controller action that returns the value
+        $.get("/Patient/checkMedicineTime", function (value) {
+            // show or hide the element based on the value
+            if (value != null) {
+                var childs="";
+                value.forEach(x=>{
+                    var c = " "
+                    childs += '<div class="alert alert-info" ><strong>Info!</strong> It is time for medicine :' + x + '</div>'
+                });
+                document.getElementById("infoDiv").innerHTML = childs;
+                document.getElementById("infoDiv").style.display = "block";
+            } else {
+                document.getElementById("infoDiv").style.display = "none";
+            }
+        });
+    }
+
+    // call the function every second
+    setInterval(checkMedicineTime, 60000);
+</script>
+

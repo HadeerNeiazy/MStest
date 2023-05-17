@@ -31,12 +31,22 @@
                     <a class="nav-link" href="~/home/about">About Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="~/Identity/Account/login" tabindex="-1" aria-disabled="true" style="padding-right: 340px;">Login</a>
+                    @if (!User.Identity.IsAuthenticated)
+                    {
+                        <a class="nav-link" href="~/Identity/Account/login" tabindex="-1" aria-disabled="true" style="padding-right: 340px;">Login</a>
+                    }
+                    else
+                    {
+                        <a class="nav-link" href="~/Identity/Account/logout" tabindex="-1" aria-disabled="true" style="padding-right: 340px;">Logout</a>
+                    }
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <span><img src="~/img/Vector (1).png"> English</span>
-                <a href="~/Identity/Account/register" id="sign"  class="btn btn-outline-success my-2 my-sm-0">Sign Up</a>
+                @if (!User.Identity.IsAuthenticated)
+                {
+                    <a href="~/Identity/Account/register" id="sign" class="btn btn-outline-success my-2 my-sm-0">Sign Up</a>
+                }
             </form>
         </div>
     </nav>
@@ -64,7 +74,9 @@
                     <ul class="nav flex-column">
                         <li class="nav-item "><a href="~/home/about" class="nav-link p-0">About Us</a></li>
                         <li class="nav-item"><a href="#" class="nav-link p-0">Contact Us</a></li>
-                        <li class="nav-item"><a href="~/Identity/Account/login" class="nav-link p-0 ">Sign in</a></li>
+                        @if (!User.Identity.IsAuthenticated){
+                            <li class="nav-item"><a href="~/Identity/Account/login" class="nav-link p-0 ">Sign in</a></li>
+                        }
                     </ul>
                 </div>
             </div>
@@ -73,7 +85,7 @@
                     <h5>Popular Categories</h5>
                     <ul class="nav flex-column">
                         <li><a href="~/doctor/diagnosis" class="nav-link p-0 ">Diagnosis</a></li>
-                        <li><a href="~/home/form" class="nav-link p-0 ">Medicine</a></li>
+                        <li><a href="~/Patient/AddMedicine" class="nav-link p-0 ">Medicine</a></li>
                         <li><a href="~/food/index" class="nav-link p-0">Food</a></li>
                         <li><a href="~/exercise/index" class="nav-link p-0">Exercises</a></li>
                     </ul>

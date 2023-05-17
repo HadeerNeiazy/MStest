@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace MStest.Controllers
@@ -20,6 +21,8 @@ namespace MStest.Controllers
 
         public IActionResult Index()
         {
+            CurrentUser.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
             return View();
         }
 
@@ -45,6 +48,8 @@ namespace MStest.Controllers
 
         public IActionResult HomePage()
         {
+            CurrentUser.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
             return View();
         }
 

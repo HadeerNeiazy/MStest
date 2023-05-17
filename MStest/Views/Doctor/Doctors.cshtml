@@ -1,6 +1,6 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@using MStest.Data.Entities
+@model List<Doctor>
+
 @{
     Layout = "";
 }
@@ -31,13 +31,13 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item">
-                    <a id="home" class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a id="home" class="nav-link" href="~/home/homePage">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item" style="width: 220px;">
                     <a class="nav-link" href="#">Notifications</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" tabindex="-1" aria-disabled="true" style="padding-right: 300px;">Chats</a>
+                    <a class="nav-link" href="~/home/chat" tabindex="-1" aria-disabled="true" style="padding-right: 300px;">Chats</a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
@@ -50,78 +50,34 @@
     <br>
     <br>
     <!--start of second section-->
-    <div class="container">
-        <div class="doc0">
-            <p class="doc"><span>05</span>Meet Our Doctors</p>
-            <p class="doc1">we advice you freely talk with doctors</p>
-        </div><br><br><br><br>
-        <div class="float-child">
-            <div class="person"><img src="~/img/portrait-candid-male-doctor-removebg-preview 1.png"></div>
-        </div>
-        <div class="float-child">
-            <div class="about">
-                <h2>Dr. Ashraf Wael</h2><br>
-                <span>Cardiologists</span><br>
-                <p>
-                    Dermatologist &Aesthetic medicine<br>
-                    specialist. Master degree of dermatology<br> ,lasers & aesthetic medicine kasr al aini<br>
-                    university.
-                </p>
-                <button type="button"><i class="fa-solid fa-message"></i>Chat with the doctor</button>
+    <div class="doc0">
+        <p class="doc"><span>05</span>Meet Our Doctors</p>
+        <p class="doc1">we advice you freely talk with doctors</p>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    @foreach(var doctor in Model){
+        <div class="container">
+            
+            <div class="float-child">
+                <div class="person"><img src="@doctor.Image"></div>
+            </div>
+            <div class="float-child">
+                <div class="about">
+                    <h2>Dr. @doctor.ApplicationUser.FirstName @doctor.ApplicationUser.LastName</h2><br>
+                    <span>Cardiologists</span><br>
+                    <p>
+                        @doctor.Description;
+                    </p>
+                    <button type="button"><i class="fa-solid fa-message"></i>Chat with the doctor</button>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="container">
-        <div class="float-child">
-            <div class="person"><img src="~/img/pngwing 1.png"></div>
-        </div>
-        <div class="float-child">
-            <div class="about">
-                <h2>Dr. Jack Albert</h2><br>
-                <span>Neurologist</span><br>
-                <p>
-                    Dermatologist &Aesthetic medicine<br>
-                    specialist. Master degree of dermatology<br> ,lasers & aesthetic medicine kasr al aini<br>
-                    university.
-                </p>
-                <button type="button"><i class="fa-solid fa-message"></i>Chat with the doctor</button>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="float-child">
-            <div class="person"><img src="~/img/doctor-with-his-arms-crossed-white-background-removebg-preview 1.png"></div>
-        </div>
-        <div class="float-child">
-            <div class="about">
-                <h2>Dr. Karem Ali</h2><br>
-                <span>Gynecologists</span><br>
-                <p>
-                    Dermatologist &Aesthetic medicine<br>
-                    specialist. Master degree of dermatology<br> ,lasers & aesthetic medicine kasr al aini<br>
-                    university.
-                </p>
-                <button type="button"><i class="fa-solid fa-message"></i>Chat with the doctor</button>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="float-child">
-            <div class="person"><img src="~/img/healthcare-workers-medicine-covid-19-pandemic-self-quarantine-concept-smiling-attractive-doctor-scrubs-glasses-stethoscope-neck-cross-arms-chest-ready-help-patients-removebg-preview 1.png"></div>
-        </div>
-        <div class="float-child">
-            <div class="about">
-                <h2>Dr. Ahmed Ali</h2><br>
-                <span>Cardiologists</span><br>
-                <p>
-                    Dermatologist &Aesthetic medicine<br>
-                    specialist. Master degree of dermatology<br> ,lasers & aesthetic medicine kasr al aini<br>
-                    university.
-                </p>
-                <button type="button"><i class="fa-solid fa-message"></i>Chat with the doctor</button>
-            </div>
-        </div>
-    </div>
+
+    }
+    
     <div class="shape5" style="top: 420px;"></div>
     <div class="shape5" style="top: 1520px;"></div>
     <div class="shape6" style="top: 1100px;"></div>
@@ -149,9 +105,9 @@
                 <div id="second">
                     <h5>Company</h5>
                     <ul class="nav flex-column">
-                        <li class="nav-item "><a href="#" class="nav-link p-0">About Us</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link p-0">Contact Us</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link p-0 ">Sign in</a></li>
+                        <li><a href="~/home/about">About Us</a></li>
+                        <li><a href="">Contact Us</a></li>
+                        <li><a href="/Identity/Account/login">Sign In</a></li>
                     </ul>
                 </div>
             </div>
@@ -159,10 +115,10 @@
                 <div id="third">
                     <h5>Popular Categories</h5>
                     <ul class="nav flex-column">
-                        <li><a href="#" class="nav-link p-0 ">Diagnosis</a></li>
-                        <li><a href="#" class="nav-link p-0 ">Medicine</a></li>
-                        <li><a href="#" class="nav-link p-0">Food</a></li>
-                        <li><a href="#" class="nav-link p-0">Exercises</a></li>
+                        <li><a href="~/doctor/diagnosis">Diagnosis</a></li>
+                        <li><a href="~/Patient/AddMedicine">Medicine</a></li>
+                        <li><a href="~/food/index">Food</a></li>
+                        <li><a href="~/exercise/index">Exercises</a></li>
                     </ul>
                 </div>
             </div>

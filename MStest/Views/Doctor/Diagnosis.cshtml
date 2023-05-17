@@ -35,13 +35,13 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item">
-                    <a id="home" class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a id="home" class="nav-link" href="~/home/homePage">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#" style="width: 220px;">Notifications</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" tabindex="-1" aria-disabled="true" style="padding-right: 340px;">Chats</a>
+                    <a class="nav-link" href="~/home/chat" tabindex="-1" aria-disabled="true" style="padding-right: 340px;">Chats</a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
@@ -91,11 +91,14 @@
                     <p id="drag">Or drag and drop it here </p>
                 </span>
                 <p><img id="output" height="350px" /></p>
-                <div class="button2"><button type="button" onclick="myfunction">cancel</button></div>
-                <div class="change">
-                    <label><a href="#">upload</a></label>
-                    <input type="file" accept="image/*" onchange="loadFile(event)" onclick="hide()">
-                </div>
+                @using (Html.BeginForm("Diagnosis", "Doctor", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    <div class="button2"><button type="submit">Save</button></div>
+                    <div class="change">
+                        <label><a href="#">upload</a></label>
+                        <input type="file" name="Documents" multiple accept="image/*">
+                    </div>
+                }
             </div>
         </div>
     </div>
@@ -117,9 +120,12 @@
                 <div id="second">
                     <h5>Company</h5>
                     <ul class="nav flex-column">
-                        <li class="nav-item "><a href="#" class="nav-link p-0">About Us</a></li>
+                        <li class="nav-item "><a href="~/home/about" class="nav-link p-0">About Us</a></li>
                         <li class="nav-item"><a href="#" class="nav-link p-0">Contact Us</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link p-0 ">Sign in</a></li>
+                        @if (!User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item"><a href="~/Identity/Account/login" class="nav-link p-0 ">Sign in</a></li>
+                        }
                     </ul>
                 </div>
             </div>
@@ -127,10 +133,10 @@
                 <div id="third">
                     <h5>Popular Categories</h5>
                     <ul class="nav flex-column">
-                        <li><a href="#" class="nav-link p-0 ">Diagnosis</a></li>
-                        <li><a href="#" class="nav-link p-0 ">Medicine</a></li>
-                        <li><a href="#" class="nav-link p-0">Food</a></li>
-                        <li><a href="#" class="nav-link p-0">Exercises</a></li>
+                        <li><a href="~/doctor/diagnosis" class="nav-link p-0 ">Diagnosis</a></li>
+                        <li><a href="~/Patient/AddMedicine" class="nav-link p-0 ">Medicine</a></li>
+                        <li><a href="~/food/index" class="nav-link p-0">Food</a></li>
+                        <li><a href="~/exercise/index" class="nav-link p-0">Exercises</a></li>
                     </ul>
                 </div>
             </div>

@@ -39,14 +39,23 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item">
-                    <a id="home" class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a id="home" class="nav-link" href="~/home/homePage">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item" style="width: 220px;">
                     <a class="nav-link" href="#">Notifications</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#" tabindex="-1" aria-disabled="true" style="padding-right: 360px;">Login</a>
-                </li>
+                @if (!User.Identity.IsAuthenticated)
+                {
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/Identity/Account/login" tabindex="-1" aria-disabled="true" style="padding-right: 360px;">Login</a>
+                    </li>
+                }
+                else{
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/Identity/Account/logout" tabindex="-1" aria-disabled="true" style="padding-right: 360px;">Logout</a>
+                    </li>
+                }
+                
                 <form class="form-inline my-2 my-lg-0">
                     <span><img src="~/img/Vector (1).png"> English</span>
                     <img id="user" src="~/img/User.png" width="50px height=50px">
@@ -129,7 +138,7 @@
                             <div class="card-body">
                                 <span class="card-title">01 <span>Diagnosis</span></span>
                                 <p class="card-text">The process of identifying a disease, condition, or injury from its signs and symptoms.<br> A health history, physical exam, and tests,<br> such as blood tests, imaging tests, and<br> biopsies, may be used to help make a diagnosis. </p>
-                                <button type="button"><a href="diagnosis.html">Know more</a>  <i class="fa-solid fa-arrow-up-long"></i></button>
+                                <button type="button"><a href="~/doctor/diagnosis">Know more</a>  <i class="fa-solid fa-arrow-up-long"></i></button>
                             </div>
                         </div>
                     </div>
@@ -139,7 +148,7 @@
                             <div class="card-body">
                                 <span class="card-title">02 <span>Profile</span></span>
                                 <p class="card-text">Doctors have always played a very important in the development of our society.<br>Furthermore,many doctors have even risked their<br> lives to serve the patients,It is very important for us convey our gratitude towards them.</p>
-                                <button type="button"><a href="#">Explore </a> <i class="fa-solid fa-arrow-up-long"></i></button>
+                                <button type="button"><a href="~/Identity/Account/profileDetails">Explore </a> <i class="fa-solid fa-arrow-up-long"></i></button>
                             </div>
                         </div>
                         <div class=""></div>
@@ -150,7 +159,7 @@
                             <div class="card-body">
                                 <span class="card-title">03 <span>Notes</span></span>
                                 <p class="card-text">The process of identifying a disease, condition, or injury from its signs and symptoms.<br> A health history, physical exam,<br>and tests, such as blood tests, imaging tests, and biopsies,<br> may be used to help make a diagnosis.</p>
-                                <button type="button"><a href="#">Know more </a><i class="fa-solid fa-arrow-up-long"></i></button>
+                                <button type="button"><a href="~/Identity/Account/notes">Know more </a><i class="fa-solid fa-arrow-up-long"></i></button>
                             </div>
                         </div>
                     </div>
@@ -160,7 +169,7 @@
                             <div class="card-body">
                                 <span class="card-title">04 <span>Chats</span></span>
                                 <p class="card-text">Doctors have always played a very important in the development of our society.<br> Furthermore, many doctors have even risked their<br> lives to serve the patients , It is very<br> important for us convey our gratitude towards them.</p>
-                                <button type="button"><a href="#">Explore </a><i class="fa-solid fa-arrow-up-long"></i></button>
+                                <button type="button"><a href="~/home/chat">Explore </a><i class="fa-solid fa-arrow-up-long"></i></button>
                             </div>
                         </div>
                     </div>
@@ -186,9 +195,9 @@
                         <div id="second">
                             <h5>Company</h5>
                             <ul class="nav flex-column">
-                                <li class="nav-item "><a href="#" class="nav-link p-0">About Us</a></li>
+                                <li class="nav-item "><a href="~/home/about#" class="nav-link p-0">About Us</a></li>
                                 <li class="nav-item"><a href="#" class="nav-link p-0">Contact Us</a></li>
-                                <li class="nav-item"><a href="#" class="nav-link p-0 ">Sign in</a></li>
+                                <li class="nav-item"><a href="~/Identity/Account/login" class="nav-link p-0 ">Sign in</a></li>
                             </ul>
                         </div>
                     </div>
@@ -196,10 +205,10 @@
                         <div id="third">
                             <h5>Popular Categories</h5>
                             <ul class="nav flex-column">
-                                <li><a href="#" class="nav-link p-0 ">Diagnosis</a></li>
-                                <li><a href="#" class="nav-link p-0 ">Medicine</a></li>
-                                <li><a href="#" class="nav-link p-0">Food</a></li>
-                                <li><a href="#" class="nav-link p-0">Exercises</a></li>
+                                <li><a href="~/doctor/diagnosis" class="nav-link p-0 ">Diagnosis</a></li>
+                                <li><a href="~/Patient/AddMedicine" class="nav-link p-0 ">Medicine</a></li>
+                                <li><a href="~/food/index" class="nav-link p-0">Food</a></li>
+                                <li><a href="~/exercise/index" class="nav-link p-0">Exercises</a></li>
                             </ul>
                         </div>
                     </div>

@@ -41,17 +41,23 @@
                         <li class="nav-item">
                             <a class="nav-link" href="~/home/about">About Us</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="~/Identity/Account/login">login</a>
-                        </li>
+                        @if(!User.Identity.IsAuthenticated){
+                            <li class="nav-item">
+                                <a class="nav-link" href="~/Identity/Account/login">login</a>
+                            </li>
+                        }
+                        
                     </ul>
                     <div class="control w-100 text-right">
                         <select name="" id="" class="form-select w-25 d-inline">
                             <option value="en">English</option>
                             <option value="ar">Arabic</option>
                         </select>
-@*                        <a href="auth.html" class="btn btn-login">sign up</a>
-*@                        <a href="~/Identity/Account/register" id="sign" class="btn btn-login">Sign Up</a>
+                        @if (!User.Identity.IsAuthenticated){
+                            <a href="~/Identity/Account/register" id="sign" class="btn btn-login">Sign Up</a>
+                        }
+                        @*                        <a href="auth.html" class="btn btn-login">sign up</a>
+*@                        
                     </div>
                 </div>
             </div>
@@ -89,7 +95,7 @@
                     <h3>Popular Categories</h3>
                     <ul>
                         <li><a href="~/doctor/diagnosis">Diagnosis</a></li>
-                        <li><a href="~/home/form">Medicine</a></li>
+                        <li><a href="~/Patient/AddMedicine">Medicine</a></li>
                         <li><a href="~/food/index">Food</a></li>
                         <li><a href="~/exercise/index">Exercises</a></li>
                     </ul>

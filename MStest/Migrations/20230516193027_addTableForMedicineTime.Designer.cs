@@ -4,14 +4,16 @@ using MStest.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace MStest.Migrations
 {
     [DbContext(typeof(MStestContext))]
-    partial class MStestContextModelSnapshot : ModelSnapshot
+    [Migration("20230516193027_addTableForMedicineTime")]
+    partial class addTableForMedicineTime
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

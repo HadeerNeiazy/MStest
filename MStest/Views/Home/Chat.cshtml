@@ -1,308 +1,416 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-    Layout = "_Layout";
+﻿@{
+    Layout = "";
 }
-<section class="message-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="chat-area">
-                    <!-- chatlist -->
-                    <div class="chatlist">
-                        <div class="modal-dialog-scrollable">
-                            <div class="modal-content">
-                                <div class="chat-header">
-                                    <div class="msg-search">
-                                        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Search" aria-label="search">
-                                    </div>
 
-                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                        <li class="nav-item" role="presentation">
-                                            <button class="nav-link active" id="Open-tab" data-bs-toggle="tab" data-bs-target="#Open" type="button" role="tab" aria-controls="Open" aria-selected="true">Chat</button>
-                                        </li>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-                                    </ul>
-                                </div>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+          integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-                                <div class="modal-body">
-                                    <!-- chat-list -->
-                                    <div class="chat-lists">
-                                        <div class="tab-content" id="myTabContent">
-                                            <div class="tab-pane fade show active" id="Open" role="tabpanel" aria-labelledby="Open-tab">
-                                                <!-- chat-list -->
-                                                <div class="chat-list">
-                                                    <a href="#" class="d-flex align-items-center">
-                                                        <div class="flex-shrink-0">
-                                                            <img class="img-fluid" src="https://mehedihtml.com/chatbox/~/img/user.png" alt="user img">
-                                                            <span class="active"></span>
-                                                        </div>
-                                                        <div class="flex-grow-1 ms-3">
-                                                            <h3>Mehedi Hasan</h3>
-                                                            <p>front end developer</p>
-                                                        </div>
-                                                    </a>
-                                                    <a href="#" class="d-flex align-items-center">
-                                                        <div class="flex-shrink-0">
-                                                            <img class="img-fluid" src="https://mehedihtml.com/chatbox/~/img/user.png" alt="user img">
-                                                        </div>
-                                                        <div class="flex-grow-1 ms-3">
-                                                            <h3>Ryhan</h3>
-                                                            <p>front end developer</p>
-                                                        </div>
-                                                    </a>
-                                                    <a href="#" class="d-flex align-items-center">
-                                                        <div class="flex-shrink-0">
-                                                            <img class="img-fluid" src="https://mehedihtml.com/chatbox/~/img/user.png" alt="user img">
-                                                        </div>
-                                                        <div class="flex-grow-1 ms-3">
-                                                            <h3>Malek Hasan</h3>
-                                                            <p>front end developer</p>
-                                                        </div>
-                                                    </a>
-                                                    <a href="#" class="d-flex align-items-center">
-                                                        <div class="flex-shrink-0">
-                                                            <img class="img-fluid" src="https://mehedihtml.com/chatbox/~/img/user.png" alt="user img">
-                                                        </div>
-                                                        <div class="flex-grow-1 ms-3">
-                                                            <h3>Sadik Hasan</h3>
-                                                            <p>front end developer</p>
-                                                        </div>
-                                                    </a>
-                                                    <a href="#" class="d-flex align-items-center">
-                                                        <div class="flex-shrink-0">
-                                                            <img class="img-fluid" src="https://mehedihtml.com/chatbox/~/img/user.png" alt="user img">
-                                                        </div>
-                                                        <div class="flex-grow-1 ms-3">
-                                                            <h3>Bulu </h3>
-                                                            <p>front end developer</p>
-                                                        </div>
-                                                    </a>
-                                                    <a href="#" class="d-flex align-items-center">
-                                                        <div class="flex-shrink-0">
-                                                            <img class="img-fluid" src="https://mehedihtml.com/chatbox/~/img/user.png" alt="user img">
-                                                        </div>
-                                                        <div class="flex-grow-1 ms-3">
-                                                            <h3>Maria SK</h3>
-                                                            <p>front end developer</p>
-                                                        </div>
-                                                    </a>
-                                                    <a href="#" class="d-flex align-items-center">
-                                                        <div class="flex-shrink-0">
-                                                            <img class="img-fluid" src="https://mehedihtml.com/chatbox/~/img/user.png" alt="user img">
-                                                        </div>
-                                                        <div class="flex-grow-1 ms-3">
-                                                            <h3>Dipa Hasan</h3>
-                                                            <p>front end developer</p>
-                                                        </div>
-                                                    </a>
-                                                    <a href="#" class="d-flex align-items-center">
-                                                        <div class="flex-shrink-0">
-                                                            <img class="img-fluid" src="https://mehedihtml.com/chatbox/~/img/user.png" alt="user img">
-                                                        </div>
-                                                        <div class="flex-grow-1 ms-3">
-                                                            <h3>Jhon Hasan</h3>
-                                                            <p>front end developer</p>
-                                                        </div>
-                                                    </a>
-                                                    <a href="#" class="d-flex align-items-center">
-                                                        <div class="flex-shrink-0">
-                                                            <img class="img-fluid" src="https://mehedihtml.com/chatbox/~/img/user.png" alt="user img">
-                                                        </div>
-                                                        <div class="flex-grow-1 ms-3">
-                                                            <h3>Tumpa Moni</h3>
-                                                            <p>front end developer</p>
-                                                        </div>
-                                                    </a>
-                                                    <a href="#" class="d-flex align-items-center">
-                                                        <div class="flex-shrink-0">
-                                                            <img class="img-fluid" src="https://mehedihtml.com/chatbox/~/img/user.png" alt="user img">
-                                                        </div>
-                                                        <div class="flex-grow-1 ms-3">
-                                                            <h3>Payel Akter</h3>
-                                                            <p>front end developer</p>
-                                                        </div>
-                                                    </a>
-                                                    <a href="#" class="d-flex align-items-center">
-                                                        <div class="flex-shrink-0">
-                                                            <img class="img-fluid" src="https://mehedihtml.com/chatbox/~/img/user.png" alt="user img">
-                                                        </div>
-                                                        <div class="flex-grow-1 ms-3">
-                                                            <h3>Baby Akter</h3>
-                                                            <p>front end developer</p>
-                                                        </div>
-                                                    </a>
-                                                    <a href="#" class="d-flex align-items-center">
-                                                        <div class="flex-shrink-0">
-                                                            <img class="img-fluid" src="https://mehedihtml.com/chatbox/~/img/user.png" alt="user img">
-                                                        </div>
-                                                        <div class="flex-grow-1 ms-3">
-                                                            <h3>Zuwel Rana</h3>
-                                                            <p>front end developer</p>
-                                                        </div>
-                                                    </a>
-                                                    <a href="#" class="d-flex align-items-center">
-                                                        <div class="flex-shrink-0">
-                                                            <img class="img-fluid" src="https://mehedihtml.com/chatbox/~/img/user.png" alt="user img">
-                                                        </div>
-                                                        <div class="flex-grow-1 ms-3">
-                                                            <h3>Habib </h3>
-                                                            <p>front end developer</p>
-                                                        </div>
-                                                    </a>
-                                                    <a href="#" class="d-flex align-items-center">
-                                                        <div class="flex-shrink-0">
-                                                            <img class="img-fluid" src="https://mehedihtml.com/chatbox/~/img/user.png" alt="user img">
-                                                        </div>
-                                                        <div class="flex-grow-1 ms-3">
-                                                            <h3>Jalal Ahmed</h3>
-                                                            <p>front end developer</p>
-                                                        </div>
-                                                    </a>
-                                                    <a href="#" class="d-flex align-items-center">
-                                                        <div class="flex-shrink-0">
-                                                            <img class="img-fluid" src="https://mehedihtml.com/chatbox/~/img/user.png" alt="user img">
-                                                        </div>
-                                                        <div class="flex-grow-1 ms-3">
-                                                            <h3>Hasan Ali</h3>
-                                                            <p>front end developer</p>
-                                                        </div>
-                                                    </a>
-                                                    <a href="#" class="d-flex align-items-center">
-                                                        <div class="flex-shrink-0">
-                                                            <img class="img-fluid" src="https://mehedihtml.com/chatbox/~/img/user.png" alt="user img">
-                                                        </div>
-                                                        <div class="flex-grow-1 ms-3">
-                                                            <h3>Mehedi Hasan</h3>
-                                                            <p>front end developer</p>
-                                                        </div>
-                                                    </a>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="~/css/chat.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="~/img/logo.svg" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mb-2 mb-lg-0 w-100">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="~/home/homePage">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/home/about">About Us</a>
+                    </li>
+                    @if (!User.Identity.IsAuthenticated)
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/Identity/Account/login">login</a>
+                        </li>
+                    }else
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/Identity/Account/logout">logout</a>
+                        </li>
+                    }
+                </ul>
+                <div class="control w-100 text-right">
+                    <select name="" id="" class="form-select w-25 d-inline">
+                        <option value="en">English</option>
+                        <option value="ar">Arabic</option>
+                    </select>
+                    <a href="auth.html" class="btn btn-login">sign up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-
-                                                </div>
-                                                <!-- chat-list -->
-                                            </div>
-
+    <section class="message-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="chat-area">
+                        <!-- chatlist -->
+                        <div class="chatlist">
+                            <div class="modal-dialog-scrollable">
+                                <div class="modal-content">
+                                    <div class="chat-header">
+                                        <div class="msg-search">
+                                            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Search" aria-label="search">
                                         </div>
 
-                                    </div>
-                                    <!-- chat-list -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- chatlist -->
-                    <!-- chatbox -->
-                    <div class="chatbox">
-                        <div class="modal-dialog-scrollable">
-                            <div class="modal-content">
-                                <div class="msg-head">
-                                    <div class="row">
-                                        <div class="col-8">
-                                            <div class="d-flex align-items-center">
-                                                <span class="chat-icon"><img class="img-fluid" src="https://mehedihtml.com/chatbox/~/img/arroleftt.svg" alt="image title"></span>
-                                                <div class="flex-shrink-0">
-                                                    <img class="img-fluid" src="https://mehedihtml.com/chatbox/~/img/user.png" alt="user img">
-                                                </div>
-                                                <div class="flex-grow-1 ms-3">
-                                                    <h3>Mehedi Hasan</h3>
-                                                    <p>front end developer</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-4">
-                                            <ul class="moreoption">
-                                                <li class="navbar nav-item dropdown">
-                                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></a>
-                                                    <ul class="dropdown-menu">
-                                                        <li><a class="dropdown-item" href="#">Action</a></li>
-                                                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                                                        <li>
-                                                            <hr class="dropdown-divider">
-                                                        </li>
-                                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div class="modal-body">
-                                    <div class="msg-body">
-                                        <ul>
-                                            <li class="sender">
-                                                <p> Hey, Are you there? </p>
-                                                <span class="time">10:06 am</span>
-                                            </li>
-                                            <li class="sender">
-                                                <p> Hey, Are you there? </p>
-                                                <span class="time">10:16 am</span>
-                                            </li>
-                                            <li class="repaly">
-                                                <p>yes!</p>
-                                                <span class="time">10:20 am</span>
-                                            </li>
-                                            <li class="sender">
-                                                <p> Hey, Are you there? </p>
-                                                <span class="time">10:26 am</span>
-                                            </li>
-                                            <li class="sender">
-                                                <p> Hey, Are you there? </p>
-                                                <span class="time">10:32 am</span>
-                                            </li>
-                                            <li class="repaly">
-                                                <p>How are you?</p>
-                                                <span class="time">10:35 am</span>
-                                            </li>
-                                            <li>
-                                                <div class="divider">
-                                                    <h6>Today</h6>
-                                                </div>
-                                            </li>
-
-                                            <li class="repaly">
-                                                <p> yes, tell me</p>
-                                                <span class="time">10:36 am</span>
-                                            </li>
-                                            <li class="repaly">
-                                                <p>yes... on it</p>
-                                                <span class="time">junt now</span>
+                                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link active" id="Open-tab" data-bs-toggle="tab" data-bs-target="#Open" type="button" role="tab" aria-controls="Open" aria-selected="true">Chat</button>
                                             </li>
 
                                         </ul>
                                     </div>
+
+                                    <div class="modal-body">
+                                        <!-- chat-list -->
+                                        <div class="chat-lists">
+                                            <div class="tab-content" id="myTabContent">
+                                                <div class="tab-pane fade show active" id="Open" role="tabpanel" aria-labelledby="Open-tab">
+                                                    <!-- chat-list -->
+                                                    <div class="chat-list">
+                                                        <a href="#" class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0">
+                                                                <img class="img-fluid" src="https://mehedihtml.com/chatbox/~/img/user.png" alt="user img">
+                                                                <span class="active"></span>
+                                                            </div>
+                                                            <div class="flex-grow-1 ms-3">
+                                                                <h3>Mehedi Hasan</h3>
+                                                                <p>front end developer</p>
+                                                            </div>
+                                                        </a>
+                                                        <a href="#" class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0">
+                                                                <img class="img-fluid" src="https://mehedihtml.com/chatbox/~/img/user.png" alt="user img">
+                                                            </div>
+                                                            <div class="flex-grow-1 ms-3">
+                                                                <h3>Ryhan</h3>
+                                                                <p>front end developer</p>
+                                                            </div>
+                                                        </a>
+                                                        <a href="#" class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0">
+                                                                <img class="img-fluid" src="https://mehedihtml.com/chatbox/~/img/user.png" alt="user img">
+                                                            </div>
+                                                            <div class="flex-grow-1 ms-3">
+                                                                <h3>Malek Hasan</h3>
+                                                                <p>front end developer</p>
+                                                            </div>
+                                                        </a>
+                                                        <a href="#" class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0">
+                                                                <img class="img-fluid" src="https://mehedihtml.com/chatbox/~/img/user.png" alt="user img">
+                                                            </div>
+                                                            <div class="flex-grow-1 ms-3">
+                                                                <h3>Sadik Hasan</h3>
+                                                                <p>front end developer</p>
+                                                            </div>
+                                                        </a>
+                                                        <a href="#" class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0">
+                                                                <img class="img-fluid" src="https://mehedihtml.com/chatbox/~/img/user.png" alt="user img">
+                                                            </div>
+                                                            <div class="flex-grow-1 ms-3">
+                                                                <h3>Bulu </h3>
+                                                                <p>front end developer</p>
+                                                            </div>
+                                                        </a>
+                                                        <a href="#" class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0">
+                                                                <img class="img-fluid" src="https://mehedihtml.com/chatbox/~/img/user.png" alt="user img">
+                                                            </div>
+                                                            <div class="flex-grow-1 ms-3">
+                                                                <h3>Maria SK</h3>
+                                                                <p>front end developer</p>
+                                                            </div>
+                                                        </a>
+                                                        <a href="#" class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0">
+                                                                <img class="img-fluid" src="https://mehedihtml.com/chatbox/~/img/user.png" alt="user img">
+                                                            </div>
+                                                            <div class="flex-grow-1 ms-3">
+                                                                <h3>Dipa Hasan</h3>
+                                                                <p>front end developer</p>
+                                                            </div>
+                                                        </a>
+                                                        <a href="#" class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0">
+                                                                <img class="img-fluid" src="https://mehedihtml.com/chatbox/~/img/user.png" alt="user img">
+                                                            </div>
+                                                            <div class="flex-grow-1 ms-3">
+                                                                <h3>Jhon Hasan</h3>
+                                                                <p>front end developer</p>
+                                                            </div>
+                                                        </a>
+                                                        <a href="#" class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0">
+                                                                <img class="img-fluid" src="https://mehedihtml.com/chatbox/~/img/user.png" alt="user img">
+                                                            </div>
+                                                            <div class="flex-grow-1 ms-3">
+                                                                <h3>Tumpa Moni</h3>
+                                                                <p>front end developer</p>
+                                                            </div>
+                                                        </a>
+                                                        <a href="#" class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0">
+                                                                <img class="img-fluid" src="https://mehedihtml.com/chatbox/~/img/user.png" alt="user img">
+                                                            </div>
+                                                            <div class="flex-grow-1 ms-3">
+                                                                <h3>Payel Akter</h3>
+                                                                <p>front end developer</p>
+                                                            </div>
+                                                        </a>
+                                                        <a href="#" class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0">
+                                                                <img class="img-fluid" src="https://mehedihtml.com/chatbox/~/img/user.png" alt="user img">
+                                                            </div>
+                                                            <div class="flex-grow-1 ms-3">
+                                                                <h3>Baby Akter</h3>
+                                                                <p>front end developer</p>
+                                                            </div>
+                                                        </a>
+                                                        <a href="#" class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0">
+                                                                <img class="img-fluid" src="https://mehedihtml.com/chatbox/~/img/user.png" alt="user img">
+                                                            </div>
+                                                            <div class="flex-grow-1 ms-3">
+                                                                <h3>Zuwel Rana</h3>
+                                                                <p>front end developer</p>
+                                                            </div>
+                                                        </a>
+                                                        <a href="#" class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0">
+                                                                <img class="img-fluid" src="https://mehedihtml.com/chatbox/~/img/user.png" alt="user img">
+                                                            </div>
+                                                            <div class="flex-grow-1 ms-3">
+                                                                <h3>Habib </h3>
+                                                                <p>front end developer</p>
+                                                            </div>
+                                                        </a>
+                                                        <a href="#" class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0">
+                                                                <img class="img-fluid" src="https://mehedihtml.com/chatbox/~/img/user.png" alt="user img">
+                                                            </div>
+                                                            <div class="flex-grow-1 ms-3">
+                                                                <h3>Jalal Ahmed</h3>
+                                                                <p>front end developer</p>
+                                                            </div>
+                                                        </a>
+                                                        <a href="#" class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0">
+                                                                <img class="img-fluid" src="https://mehedihtml.com/chatbox/~/img/user.png" alt="user img">
+                                                            </div>
+                                                            <div class="flex-grow-1 ms-3">
+                                                                <h3>Hasan Ali</h3>
+                                                                <p>front end developer</p>
+                                                            </div>
+                                                        </a>
+                                                        <a href="#" class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0">
+                                                                <img class="img-fluid" src="https://mehedihtml.com/chatbox/~/img/user.png" alt="user img">
+                                                            </div>
+                                                            <div class="flex-grow-1 ms-3">
+                                                                <h3>Mehedi Hasan</h3>
+                                                                <p>front end developer</p>
+                                                            </div>
+                                                        </a>
+
+
+                                                    </div>
+                                                    <!-- chat-list -->
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                        <!-- chat-list -->
+                                    </div>
                                 </div>
-
-
-                                <div class="send-box">
-                                    <form action="">
-                                        <input type="text" class="form-control" aria-label="message…" placeholder="Write message…">
-
-                                        <button type="button"><i class="fa fa-paper-plane" aria-hidden="true"></i> Send</button>
-                                    </form>
-
-                                    <div class="send-btns">
-                                        <div class="attach">
-                                            <div class="button-wrapper">
-                                                <span class="label">
-                                                    <img class="img-fluid" src="https://mehedihtml.com/chatbox/~/img/upload.svg" alt="image title"> attached file
-                                                </span><input type="file" name="upload" id="upload" class="upload-box" placeholder="Upload File" aria-label="Upload File">
+                            </div>
+                        </div>
+                        <!-- chatlist -->
+                        <!-- chatbox -->
+                        <div class="chatbox">
+                            <div class="modal-dialog-scrollable">
+                                <div class="modal-content">
+                                    <div class="msg-head">
+                                        <div class="row">
+                                            <div class="col-8">
+                                                <div class="d-flex align-items-center">
+                                                    <span class="chat-icon"><img class="img-fluid" src="https://mehedihtml.com/chatbox/~/img/arroleftt.svg" alt="image title"></span>
+                                                    <div class="flex-shrink-0">
+                                                        <img class="img-fluid" src="https://mehedihtml.com/chatbox/~/img/user.png" alt="user img">
+                                                    </div>
+                                                    <div class="flex-grow-1 ms-3">
+                                                        <h3>Mehedi Hasan</h3>
+                                                        <p>front end developer</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                                <ul class="moreoption">
+                                                    <li class="navbar nav-item dropdown">
+                                                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></a>
+                                                        <ul class="dropdown-menu">
+                                                            <li><a class="dropdown-item" href="#">Action</a></li>
+                                                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                                                            <li>
+                                                                <hr class="dropdown-divider">
+                                                            </li>
+                                                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
                                             </div>
                                         </div>
                                     </div>
 
+
+                                    <div class="modal-body">
+                                        <div class="msg-body">
+                                            <ul>
+                                                <li class="sender">
+                                                    <p> Hey, Are you there? </p>
+                                                    <span class="time">10:06 am</span>
+                                                </li>
+                                                <li class="sender">
+                                                    <p> Hey, Are you there? </p>
+                                                    <span class="time">10:16 am</span>
+                                                </li>
+                                                <li class="repaly">
+                                                    <p>yes!</p>
+                                                    <span class="time">10:20 am</span>
+                                                </li>
+                                                <li class="sender">
+                                                    <p> Hey, Are you there? </p>
+                                                    <span class="time">10:26 am</span>
+                                                </li>
+                                                <li class="sender">
+                                                    <p> Hey, Are you there? </p>
+                                                    <span class="time">10:32 am</span>
+                                                </li>
+                                                <li class="repaly">
+                                                    <p>How are you?</p>
+                                                    <span class="time">10:35 am</span>
+                                                </li>
+                                                <li>
+                                                    <div class="divider">
+                                                        <h6>Today</h6>
+                                                    </div>
+                                                </li>
+
+                                                <li class="repaly">
+                                                    <p> yes, tell me</p>
+                                                    <span class="time">10:36 am</span>
+                                                </li>
+                                                <li class="repaly">
+                                                    <p>yes... on it</p>
+                                                    <span class="time">junt now</span>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="send-box">
+                                        <form action="">
+                                            <input type="text" class="form-control" aria-label="message…" placeholder="Write message…">
+
+                                            <button type="button"><i class="fa fa-paper-plane" aria-hidden="true"></i> Send</button>
+                                        </form>
+
+                                        <div class="send-btns">
+                                            <div class="attach">
+                                                <div class="button-wrapper">
+                                                    <span class="label">
+                                                        <img class="img-fluid" src="https://mehedihtml.com/chatbox/~/img/upload.svg" alt="image title"> attached file
+                                                    </span><input type="file" name="upload" id="upload" class="upload-box" placeholder="Upload File" aria-label="Upload File">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <!-- chatbox -->
+
+
                 </div>
-                <!-- chatbox -->
-
-
             </div>
         </div>
-    </div>
-</section>
+    </section>
+    <footer class="bg-footer ">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <img src="~/img/logoFooter.svg" class="img-fluid" alt="">
+                    <div class="social d-flex mt-4 justify-content-center">
+                        <a href="" style="margin-right: 5%;">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                        <a href="">
+                            <i class="fa-brands fa-google"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="~/home/about">About Us</a></li>
+                        <li><a href="">Contact Us</a></li>
+                        <li><a href="/Identity/Account/login">Sign In</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h3>Popular Categories</h3>
+                    <ul>
+                        <li><a href="~/doctor/diagnosis">Diagnosis</a></li>
+                        <li><a href="~/Patient/AddMedicine">Medicine</a></li>
+                        <li><a href="~/food/index">Food</a></li>
+                        <li><a href="~/exercise/index">Exercises</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+            integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    @*<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+            integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+            crossorigin="anonymous"></script>*@
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+            integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="~/js/chat.js"></script>
+</body>
+</html>

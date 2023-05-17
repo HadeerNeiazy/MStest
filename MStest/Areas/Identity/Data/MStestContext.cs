@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using MStest.Areas.Identity.Data;
+using MStest.Data.Entities;
 
 namespace MStest.Data
 {
@@ -24,5 +25,9 @@ namespace MStest.Data
             // Add your customizations after calling base.OnModelCreating(builder);
         }
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+        public DbSet<Doctor> Doctors { get; set; }
+        public DbSet<Medicine> Medicines { get; set; }
+        public DbSet<Patient> Patients { get; set; }
+        public DbSet<MedicineTime> MedicineTime { get; set; }
     }
 }
