@@ -101,13 +101,16 @@
                     <h1>Sign Up</h1>
                     <p class="welcome">welcome to MS Support</p>
                     <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="input-group mb-2">
                                     <span class="input-group-text" id="basic-addon1">
                                         <i class="fa-regular fa-user"></i>
                                     </span>
-                                    <input type="text" name="FirstName" class="form-control" placeholder="First Name" aria-label="First Name" aria-describedby="basic-addon1">
+                                    @*<input type="text" name="FirstName" class="form-control" placeholder="First Name" aria-label="First Name" aria-describedby="basic-addon1">*@
+                                    @Html.EditorFor(model => model.Input.FirstName, new { htmlAttributes = new { @class = "form-control",@placeholder = "First Name" } })
+                                    @Html.ValidationMessageFor(model => model.Input.FirstName, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -115,7 +118,9 @@
                                     <span class="input-group-text" id="basic-addon1">
                                         <i class="fa-regular fa-user"></i>
                                     </span>
-                                    <input type="text" name="LastName" class="form-control" placeholder="Last Name" aria-label="Last Name" aria-describedby="basic-addon1">
+                                    @Html.EditorFor(model => model.Input.LastName, new { htmlAttributes = new { @class = "form-control",@placeholder = "Last Name" } })
+@*                                    <input type="text" name="LastName" class="form-control" placeholder="Last Name" aria-label="Last Name" aria-describedby="basic-addon1">
+*@                                    @Html.ValidationMessageFor(model => model.Input.LastName, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                             <div class="col-md-12">
@@ -123,56 +128,68 @@
                                     <span class="input-group-text" id="basic-addon1">
                                         <i class="fa-regular fa-envelope"></i>
                                     </span>
-                                    <input type="email" name="Email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1">
+                                    @Html.EditorFor(model => model.Input.Email, new { htmlAttributes = new {@type = "email", @class = "form-control",@placeholder = "Email" } })
+                                    @*<input type="email" name="Email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1">*@
+                                    @Html.ValidationMessageFor(model => model.Input.Email, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="input-group mb-2">
-                                    <input type="password" name="Password" class="form-control passInput" placeholder="Password" aria-label="Password" aria-describedby="basic-addon2">
+                                    @*<input type="password" name="Password" class="form-control passInput" placeholder="Password" aria-label="Password" aria-describedby="basic-addon2">*@
+                                    @Html.EditorFor(model => model.Input.Password, new { htmlAttributes = new { @type = "password",@class = "form-control passInput",@placeholder = "Password" } })
+
                                     <button type="button" class="input-group-text tooglePassword" id="basic-addon2">
                                         <i class="fa-regular fa-eye"></i>
                                     </button>
+                                    @Html.ValidationMessageFor(model => model.Input.Password, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="input-group mb-2">
-                                    <input type="password" name="ConfirmPassword" class="form-control passConfirmInput" placeholder="Confirm Password" aria-label="ConfirmPassword" aria-describedby="basic-addon2">
-                                    <button type="button"  class="input-group-text toogleConfirmPassword" id="basic-addon2">
+@*                                    <input type="password" name="ConfirmPassword" class="form-control passConfirmInput" placeholder="Confirm Password" aria-label="ConfirmPassword" aria-describedby="basic-addon2">
+*@                                  @Html.EditorFor(model => model.Input.ConfirmPassword, new { htmlAttributes = new {@type = "password", @class = "form-control",@placeholder = "ConfirmPassword" } })
+                                    <button type="button" class="input-group-text toogleConfirmPassword" id="basic-addon2">
                                         <i class="fa-regular fa-eye"></i>
                                     </button>
+                                    @Html.ValidationMessageFor(model => model.Input.ConfirmPassword, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <label for="" class="areyou">Are you ?</label>
                                 <div class="d-flex mt-3">
                                     <div class="doctor d-flex ml-4">
-                                        <input type="radio" name="UserType" id="doctor" value="doctor">
+                                        @*<input type="radio" name="UserType" id="doctor" value="doctor">*@
+                                        @Html.RadioButtonFor(model => model.Input.UserType,"doctor" ,new { htmlAttributes = new {id="doctor"} })
                                         <label for="doctor" style="margin-left: 10%;">Doctor</label>
                                     </div>
                                     <div class="patient d-flex ml-4">
-                                        <input type="radio" name="UserType" id="patient" value="patient">
+@*                                        <input type="radio" name="UserType" id="patient" value="patient">
+*@                                        @Html.RadioButtonFor(model => model.Input.UserType,"patient", new { htmlAttributes = new {id="patient"} })
+
                                         <label for="patient" style="margin-left: 10%;">Patient</label>
                                     </div>
                                     <div class="other d-flex ml-4">
-                                        <input type="radio" name="UserType" id="Other" value="other">
+                                        @*<input type="radio" name="UserType" id="Other" value="other">*@
+                                        @Html.RadioButtonFor(model => model.Input.UserType,"Other", new { htmlAttributes = new {id="Other"} })
                                         <label for="Other" style="margin-left: 10%;">Other</label>
                                     </div>
                                 </div>
+                                @Html.ValidationMessageFor(model => model.Input.UserType,"", new { @class = "text-danger" })
                             </div>
                         </div>
                         <div class="input-group my-3">
                             <button type="submit" class="btn btn-outline-primary btn-auth">Sign Up</button>
                         </div>
                     </form>
-                    <h6>--- Or Sign Up With ---</h6>
+                    @*<h6>--- Or Sign Up With ---</h6>
                     <div class="social-icons">
-                        <a href="">
-                            <i class="fa-brands fa-facebook"></i>
-                        </a>
-                        <a href="">
-                            <i class="fa-brands fa-google"></i>
-                        </a>
-                    </div>
+                    <a href="">
+                    <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a href="">
+                    <i class="fa-brands fa-google"></i>
+                    </a>
+                    </div>*@
                     <p class="no_account">
                         Already Have An Account
                         <button type="button" class="btn showLogin">Log IN</button>
@@ -207,15 +224,15 @@
                             <a href="profile.html" class="btn btn-outline-primary btn-auth">Log In</a>
                         </div>
                     </form>
-                    <h6>--- Or Sign In With ---</h6>
+                    @*<h6>--- Or Sign In With ---</h6>
                     <div class="social-icons">
-                        <a href="">
-                            <i class="fa-brands fa-facebook"></i>
-                        </a>
-                        <a href="">
-                            <i class="fa-brands fa-google"></i>
-                        </a>
-                    </div>
+                    <a href="">
+                    <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a href="">
+                    <i class="fa-brands fa-google"></i>
+                    </a>
+                    </div>*@
                     <p class="no_account">
                         If you didn’t have an account please
                         <button type="button" class="btn showRegister">Sign Up</button>
@@ -329,9 +346,10 @@
 
 </html>
 
-@*@section Scripts {
+@section Scripts {
     <partial name="_ValidationScriptsPartial" />
-}*@
+}
+
 
 
 

@@ -4,40 +4,70 @@
 }
 <div class="profile text-center">
     <div class="container">
-        <form action="" class="w-75 mt-4 m-auto text-right">
+        @using (Html.BeginForm(FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+
+            @Html.HiddenFor(model => model.userPoco.Id, new { htmlAttributes = new { @class = "form-control"} })
+            @Html.HiddenFor(model => model.userPoco.Image, new { htmlAttributes = new { @class = "form-control"} })
+            @Html.HiddenFor(model => model.userPoco.DoctorId, new { htmlAttributes = new { @class = "form-control"} })
+            @Html.HiddenFor(model => model.userPoco.PatientId, new { htmlAttributes = new { @class = "form-control"} })
+            @Html.HiddenFor(model => model.userPoco.UserType, new { htmlAttributes = new { @class = "form-control"} })
+
             <label for="uploadPhoto" class="d-block text-center">
-                <img src="~/img/user.svg" class="img-fluid" id="showImage" alt="">
+                <img src="~/img/@Model?.userPoco?.Image" class="img-fluid" id="showImage" alt="">
             </label>
-            <input type="file" name="photo" id="uploadPhoto" />
+            @*<input type="file" name="photo" id="uploadPhoto" />*@
+            @Html.EditorFor(model => model.userPoco.ImageFile, new { htmlAttributes = new { type = "file",@class = "form-control"} })
+
             <h2 class="section-title" style="margin-bottom: 4%;">Edit My Profile</h2>
 
             <div class="mt-4">
-                <label for="" class="d-block mb-4">Name</label>
-                <input type="text" class="form-control d-block">
+                <label for="" class="d-block mb-4">First Name</label>
+                @*                <input type="text" class="form-control d-block">
+            *@                @Html.EditorFor(model => model.userPoco.FirstName, new { htmlAttributes = new { @class = "form-control d-block",@placeholder = "First Name" } })
             </div>
             <div class="mt-4">
-                <label for="" class="d-block mb-4">E-mail</label>
-                <input type="email" class="form-control d-block">
+                <label for="" class="d-block mb-4">Last Name</label>
+                @*                <input type="email" class="form-control d-block">
+            *@                @Html.EditorFor(model => model.userPoco.LastName, new { htmlAttributes = new { @class = "form-control d-block",@placeholder = "Last Name" } })
             </div>
             <div class="mt-4">
-                <div class="row">
-                    <div class="col-sm-4">
-                        <label for="" class="d-block mb-4">Old Password</label>
-                        <input type="password" class="form-control d-block">
-                    </div>
-                    <div class="col-sm-4">
-                        <label for="" class="d-block mb-4">Password</label>
-                        <input type="password" class="form-control d-block">
-                    </div>
-                    <div class="col-sm-4">
-                        <label for="" class="d-block mb-4">Password Confirmation</label>
-                        <input type="password" class="form-control d-block">
-                    </div>
+                <label for="" class="d-block mb-4">Email</label>
+                @*                <input type="text" class="form-control d-block">
+            *@                @Html.EditorFor(model => model.userPoco.Email, new { htmlAttributes = new { @class = "form-control d-block",@placeholder = "Email" } })
+            </div>
+            @if (Model.userPoco.UserType == UserType.Doctor)
+            {
+                <div class="mt-4">
+                    <label for="" class="d-block mb-4">Description</label>
+                    @*                <input type="email" class="form-control d-block">
+            *@                @Html.EditorFor(model => model.userPoco.Description, new { htmlAttributes = new { @class = "form-control d-block",@placeholder = "Description" } })
                 </div>
-            </div>
+                <div class="mt-4">
+                    <label for="" class="d-block mb-4">ExpertIn</label>
+                    @*                <input type="email" class="form-control d-block">
+            *@                @Html.EditorFor(model => model.userPoco.ExpertIn, new { htmlAttributes = new { @class = "form-control d-block",@placeholder = "ExpertIn" } })
+                </div>
+            }
+            @*<div class="mt-4">
+        <div class="row">
+        <div class="col-sm-4">
+        <label for="" class="d-block mb-4">Old Password</label>
+        <input type="password" class="form-control d-block">
+        </div>
+        <div class="col-sm-4">
+        <label for="" class="d-block mb-4">Password</label>
+        <input type="password" class="form-control d-block">
+        </div>
+        <div class="col-sm-4">
+        <label for="" class="d-block mb-4">Password Confirmation</label>
+        <input type="password" class="form-control d-block">
+        </div>
+        </div>
+        </div>*@
             <div class="input-group mt-4">
                 <button type="submit" class="btn btn-update rounded-4 w-25 ml-auto">Save</button>
             </div>
-        </form>
+        }
     </div>
 </div>

@@ -16,5 +16,6 @@ namespace MStest.Areas.Identity.Data
         public string LastName { get; set; }
 
         public UserType UserType { get; set; }
+        public string Image { get; set; }
     }
 }

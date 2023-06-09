@@ -76,7 +76,8 @@ namespace MStest.Areas.Identity.Pages.Account
             [Display(Name = "Last Name")]
             public string LastName { get; set; }
 
-            public UserType UserType { get; set; }
+            [Required(ErrorMessage = "user type is required")]
+            public UserType? UserType { get; set; } = null;
         }
 
         public async Task OnGetAsync(string returnUrl = null)
@@ -91,7 +92,7 @@ namespace MStest.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser {UserName=Input.Email, FirstName = Input.FirstName , LastName= Input.LastName, Email = Input.Email,UserType=Input.UserType };
+                var user = new ApplicationUser {UserName=Input.Email, FirstName = Input.FirstName , LastName= Input.LastName, Email = Input.Email,UserType=Input.UserType.Value };
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {

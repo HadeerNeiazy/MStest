@@ -29,5 +29,6 @@ namespace MStest.Data
         public DbSet<Medicine> Medicines { get; set; }
         public DbSet<Patient> Patients { get; set; }
         public DbSet<MedicineTime> MedicineTime { get; set; }
+        public DbSet<ChatMessage> ChatMessages { get; set; }
     }
 }

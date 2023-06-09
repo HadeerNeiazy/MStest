@@ -1,5 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using MStest.Data.Entities;
+using MStest.Data.Repositories;
 using MStest.Models;
 using System;
 using System.Collections.Generic;
@@ -13,10 +16,12 @@ namespace MStest.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IChatRepository chatRepository;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IChatRepository chatRepository)
         {
             _logger = logger;
+            this.chatRepository = chatRepository;
         }
 
         public IActionResult Index()
@@ -36,9 +41,16 @@ namespace MStest.Controllers
             return View();
         }
 
-        public IActionResult Chat()
+        [Authorize]
+        public async Task<IActionResult> Chat()
         {
-            return View();
+            return View(await chatRepository.GetChatConnections());
+        }
+
+        [Authorize]
+        public async Task<List<ChatMessage>> GetChatMessages(string partnerId)
+        {
+            return await chatRepository.GetChatMessages(partnerId);
         }
 
         public IActionResult Privacy()

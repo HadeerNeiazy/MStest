@@ -10,6 +10,7 @@ using Microsoft.Extensions.Hosting;
 using MStest.Areas.Identity.Data;
 using MStest.Data;
 using MStest.Data.Repositories;
+using MStest.Hubs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,7 +46,12 @@ namespace MStest
             services.AddControllersWithViews();
             services.AddScoped<IDoctorRepository, DoctorRepository>();
             services.AddScoped<IPatientRepository, PatientRepository>();
+            services.AddScoped<IChatRepository, ChatRepository>();
             services.AddHttpContextAccessor();
+            services.AddSignalR(opt =>
+            {
+                opt.MaximumReceiveMessageSize = 307200;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -72,6 +78,7 @@ namespace MStest
                     name: "default",
                     pattern: "{controller=Home}/{action=HomePage}/{id?}");
                 endpoints.MapRazorPages();
+                endpoints.MapHub<ChatHub>("/chatHub");
             });
         }
     }

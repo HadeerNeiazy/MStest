@@ -62,7 +62,7 @@
         <div class="container">
             
             <div class="float-child">
-                <div class="person"><img src="@doctor.Image"></div>
+                <div class="person"><img src="~/img/@doctor.ApplicationUser.Image"></div>
             </div>
             <div class="float-child">
                 <div class="about">
@@ -71,7 +71,7 @@
                     <p>
                         @doctor.Description;
                     </p>
-                    <button type="button"><i class="fa-solid fa-message"></i>Chat with the doctor</button>
+                    <button onclick='SetActiveConnection("@doctor.ApplicationUser.UserName","@doctor.ApplicationUser.Id","@doctor.ApplicationUser.FirstName @doctor.ApplicationUser.LastName ","/img/@doctor.ApplicationUser.Image")' type="button"><i class="fa-solid fa-message"></i>Chat with the doctor</button>
                 </div>
             </div>
         </div>
@@ -119,6 +119,7 @@
                         <li><a href="~/Patient/AddMedicine">Medicine</a></li>
                         <li><a href="~/food/index">Food</a></li>
                         <li><a href="~/exercise/index">Exercises</a></li>
+                        <li><a href="~/doctor/doctors" class="nav-link p-0">Doctors</a></li>
                     </ul>
                 </div>
             </div>
@@ -128,5 +129,7 @@
     <script src="~/js/js.js"></script>
     <script src="~/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/all.min.js"></script>
+    <script src="~/js/signalr/dist/browser/signalr.js"></script>
+    <script src="~/js/chat.js"></script>
 </body>
 </html>

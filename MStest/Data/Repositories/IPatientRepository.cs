@@ -13,5 +13,8 @@ namespace MStest.Data.Repositories
         Task<Patient> GetByUserIdAsync(string userId);
         Task<Patient> AddPatientMedicineAsync(PatientMedicine medicine,string userId);
         Task<List<string>> CheckMedicineTime();
+        Task<Patient> GetByUserId(string id);
+        Task<Patient> GetById(int patientId);
+        Task UpdateAsync(Patient pateint);
     }
 }

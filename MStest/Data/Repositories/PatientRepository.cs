@@ -22,7 +22,7 @@ namespace MStest.Data.Repositories
         {
             await mStestContext.Patients.AddAsync(patient);
             await mStestContext.SaveChangesAsync();
-            return await mStestContext.Patients.SingleAsync(p => p.Id == patient.Id); ;
+            return await mStestContext.Patients.SingleAsync(p => p.Id == patient.Id);
         }
 
         public async Task<Patient> AddPatientMedicineAsync(PatientMedicine medicine, string userId)
@@ -59,7 +59,7 @@ namespace MStest.Data.Repositories
 
         public async Task<Patient> GetByUserIdAsync(string userId)
         {
-            return await mStestContext.Patients.Include(x=>x.Medicines).SingleOrDefaultAsync(p => p.ApplicationUser.Id == userId);
+            return await mStestContext.Patients.Include(x => x.Medicines).SingleOrDefaultAsync(p => p.ApplicationUser.Id == userId);
         }
 
         public async Task<Patient> UpdatePatientAsync(Patient patient)
@@ -81,13 +81,29 @@ namespace MStest.Data.Repositories
         {
             var medicineTimes = await mStestContext.Medicines
                                .Where(m => m.Patient.ApplicationUserId == CurrentUser.UserId)
-                               .SelectMany(x => x.Times).Include(x=>x.Medicine)
+                               .SelectMany(x => x.Times).Include(x => x.Medicine)
                                .Where(t => t.Time.Hour == DateTime.Now.Hour).ToListAsync();
 
             if (medicineTimes.Count > 0)
                 return medicineTimes.Select(x => x.Medicine.Name).ToList();
-            
+
             return null;
+        }
+
+        public async Task<Patient> GetByUserId(string id)
+        {
+            return await mStestContext.Patients.Include(x => x.ApplicationUser).FirstOrDefaultAsync(x => x.ApplicationUserId == id);
+        }
+
+        public async Task<Patient> GetById(int patientId)
+        {
+            return await mStestContext.Patients.Include(x => x.ApplicationUser).FirstOrDefaultAsync(x => x.Id == patientId);
+        }
+
+        public async Task UpdateAsync(Patient pateint)
+        {
+            mStestContext.Patients.Update(pateint);
+            await mStestContext.SaveChangesAsync();
         }
     }
 }

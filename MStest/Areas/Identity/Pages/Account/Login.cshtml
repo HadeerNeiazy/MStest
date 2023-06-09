@@ -65,7 +65,7 @@
                             <button type="submit" class="btn btn-outline-primary btn-auth">Log in</button>
                         </div>
                     </form>
-                    <h6>--- Or Sign In With ---</h6>
+                    @*<h6>--- Or Sign In With ---</h6>
                     <div class="social-icons">
                         <a href="">
                             <i class="fa-brands fa-facebook"></i>
@@ -73,10 +73,11 @@
                         <a href="">
                             <i class="fa-brands fa-google"></i>
                         </a>
-                    </div>
+                    </div>*@
                     <p class="no_account">
                         Don’t have an account
-                        <button type="button" class="btn showRegister" asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Sign Up</button>
+@*                        <button type="button" class="btn showRegister" asp-page="./Register" >Sign Up</button>
+*@                        <a href="/Identity/Account/register" class="btn showRegister">Sign Up</a>
                     </p>
                 </div>
                 <div class="col-md-6 forgetPassword d-none">
