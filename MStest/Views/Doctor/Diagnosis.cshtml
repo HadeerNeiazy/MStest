@@ -46,7 +46,10 @@
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <span><img src="~/img/Vector (1).png"> English</span>
-                <img id="user" src="~/img/User.png" width="50px height=50px">
+                <a href="~/Identity/Account/profileDetails">
+                    <img id="user" src="~/img/User.png" width="50px" height="50px">
+                </a>
+
             </form>
         </div>
     </nav>
@@ -100,16 +103,20 @@
                     </div>
                 }
             </div>
-            
+
 
         </div>
         @if (@ViewBag.DiagnosisResult != null)
         {
             <div style="display:flex; justify-content:center;">
-                <h3>the result of diagnosis is: 
-                    @if (@ViewBag.DiagnosisResult=="patient"){
+                <h3>
+                    the result of diagnosis is:
+                    @if (@ViewBag.DiagnosisResult == "patient")
+                    {
                         <span style="background-color:red">@ViewBag.DiagnosisResult</span>
-                    }else{
+                    }
+                    else
+                    {
                         <span style="background-color:lawngreen">@ViewBag.DiagnosisResult</span>
                     }
                 </h3>

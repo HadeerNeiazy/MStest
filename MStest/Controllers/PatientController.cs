@@ -52,6 +52,7 @@ namespace MStest.Controllers
             //if (medicines.Count > 0)
             //    SendEmail(User.FindFirstValue(ClaimTypes.Name), medicines);
             return medicines;
+
         }
         private void SendEmail(string emailTo, List<string> medicines)
         {
