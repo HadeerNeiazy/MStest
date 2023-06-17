@@ -5,6 +5,8 @@ using MStest.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
+using System.Net;
 using System.Threading.Tasks;
 using Patient = MStest.Data.Entities.Patient;
 
@@ -90,6 +92,7 @@ namespace MStest.Data.Repositories
             return null;
         }
 
+        
         public async Task<Patient> GetByUserId(string id)
         {
             return await mStestContext.Patients.Include(x => x.ApplicationUser).FirstOrDefaultAsync(x => x.ApplicationUserId == id);

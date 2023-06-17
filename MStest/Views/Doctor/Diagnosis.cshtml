@@ -100,7 +100,21 @@
                     </div>
                 }
             </div>
+            
+
         </div>
+        @if (@ViewBag.DiagnosisResult != null)
+        {
+            <div style="display:flex; justify-content:center;">
+                <h3>the result of diagnosis is: 
+                    @if (@ViewBag.DiagnosisResult=="patient"){
+                        <span style="background-color:red">@ViewBag.DiagnosisResult</span>
+                    }else{
+                        <span style="background-color:lawngreen">@ViewBag.DiagnosisResult</span>
+                    }
+                </h3>
+            </div>
+        }
     </div>
     <div class="shape2"></div>
     <div class="container">

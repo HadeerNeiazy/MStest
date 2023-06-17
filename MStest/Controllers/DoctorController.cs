@@ -30,8 +30,10 @@ namespace MStest.Controllers
         }
 
         [HttpPost]
-        public IActionResult Diagnosis(List<IFormFile> Documents)
+        public async Task<IActionResult> Diagnosis(List<IFormFile> Documents)
         {
+            var result = doctorRepository.DiagnoseAsync(Documents);
+            ViewBag.DiagnosisResult=result;
             return View();
         }
     }

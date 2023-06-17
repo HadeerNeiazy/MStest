@@ -1,7 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using MStest.Data.Entities;
 using MStest.Models;
+using RestSharp;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Threading.Tasks;
 
 namespace MStest.Data.Repositories
@@ -19,6 +23,20 @@ namespace MStest.Data.Repositories
         {
             await mStestContext.Doctors.AddAsync(doctor);
             await mStestContext.SaveChangesAsync();
+        }
+
+        public string DiagnoseAsync(List<IFormFile> documents)
+        {
+            var client = new RestClient("http://127.0.0.1:5000");
+
+            var request = new RestRequest("/predict",Method.Post);
+
+            MemoryStream stream = new MemoryStream();
+            documents[0].CopyTo(stream);
+            request.AddFile("my_image",bytes: stream.ToArray(), documents[0].FileName);
+
+            var response = client.Execute(request);
+            return response.Content;
         }
 
         public async Task<Doctor> GetById(int doctorId)
