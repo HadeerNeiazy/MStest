@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using MStest.Areas.Identity.Data;
 
-namespace MStest.Areas.Identity.POCO
+namespace MStest.Areas.Identity.ViewModels
 {
-    public class UserPoco:ApplicationUser
+    public class UserViewModel:ApplicationUser
     {
         public string Description { get; set; }
         public string ExpertIn { get; set; }

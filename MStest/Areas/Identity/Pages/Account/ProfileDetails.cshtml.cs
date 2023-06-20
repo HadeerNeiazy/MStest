@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using MStest.Areas.Identity.Data;
-using MStest.Areas.Identity.POCO;
+using MStest.Areas.Identity.ViewModels;
 using MStest.Data.Repositories;
 using System.Threading.Tasks;
 
@@ -16,7 +16,7 @@ namespace MStest.Areas.Identity.Pages.Account
         private readonly UserManager<ApplicationUser> userManager;
         private readonly IDoctorRepository doctorRepository;
         private readonly IPatientRepository patientRepository;
-        public UserPoco userPoco;
+        public UserViewModel userPoco;
 
         public ProfileDetailsModel(IHttpContextAccessor httpContext, UserManager<ApplicationUser> userManager, IDoctorRepository doctorRepository, IPatientRepository patientRepository)
         {
@@ -28,7 +28,7 @@ namespace MStest.Areas.Identity.Pages.Account
         public async Task OnGet()
         {
             var user = await userManager.GetUserAsync(httpContext.HttpContext.User);
-            userPoco = new UserPoco()
+            userPoco = new UserViewModel()
             {
                 FirstName = user.FirstName,
                 LastName = user.LastName,
