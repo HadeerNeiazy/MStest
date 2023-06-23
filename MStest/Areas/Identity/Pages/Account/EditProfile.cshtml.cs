@@ -37,6 +37,7 @@ namespace MStest.Areas.Identity.Pages.Account
                 Email = user.Email,
                 UserType = user.UserType,
                 Id = user.Id,
+                Image = user.Image,
             };
             if (user.UserType == UserType.Doctor)
             {
@@ -45,7 +46,6 @@ namespace MStest.Areas.Identity.Pages.Account
                 {
                     userPoco.ExpertIn = doctor.ExpertIn;
                     userPoco.Description = doctor.Description;
-                    userPoco.Image = doctor.ApplicationUser.Image;
                     userPoco.DoctorId = doctor.Id;
                 }
             }
@@ -55,7 +55,6 @@ namespace MStest.Areas.Identity.Pages.Account
                 if (pateint != null)
                 {
                     userPoco.PatientId = pateint.Id;
-                    userPoco.Image = pateint.Image;
                 }
 
             }
@@ -77,13 +76,21 @@ namespace MStest.Areas.Identity.Pages.Account
             {
                 if (userPoco.PatientId == 0)
                 {
-                    var patient = new Patient(userPoco.Id, userPoco.Image);
+                    var user = await userManager.FindByIdAsync(userPoco.Id);
+                    user.Image = userPoco.Image;
+                    await userManager.UpdateAsync(user);
+
+                    var patient = new Patient(userPoco.Id);
                     await patientRepository.AddPatientAsync(patient);
                 }
                 else
                 {
+                    var user = await userManager.FindByIdAsync(userPoco.Id);
+                    user.Image = userPoco.Image;
+                    await userManager.UpdateAsync(user);
+
                     var pateint = await patientRepository.GetById(userPoco.PatientId);
-                    pateint.Image = userPoco.Image;
+                    pateint.ApplicationUser.Image = userPoco.Image;
                     pateint.ApplicationUser.FirstName = userPoco.FirstName;
                     pateint.ApplicationUser.LastName = userPoco.LastName;
                     pateint.ApplicationUser.Email = userPoco.Email;
@@ -95,7 +102,7 @@ namespace MStest.Areas.Identity.Pages.Account
             }
             else if (userPoco.UserType == UserType.Doctor)
             {
-                
+
                 if (userPoco.DoctorId == 0)
                 {
                     var user = await userManager.FindByIdAsync(userPoco.Id);

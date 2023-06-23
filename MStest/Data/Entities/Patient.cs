@@ -12,10 +12,9 @@ namespace MStest.Data.Entities
         {
 
         }
-        public Patient(string applicationUserId, string image)
+        public Patient(string applicationUserId)
         {
             ApplicationUserId = applicationUserId;
-            Image = image;
         }
 
         public int Id { get; set; }
